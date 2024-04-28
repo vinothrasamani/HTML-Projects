@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music Player</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<div class="container"><br>
+		<marquee>
+			<i><p>If you want to play Your songs then select the files to play...</p></i>
+			<i><input type="file" id="choose"></i>
+		</marquee>
+		<div class="inner"><img src="assets/songBack.jpg" id="musicPic"></div>
+		<div class="song">
+			<img src="assets/play.png" id="icon" onclick="player();"><br>
+			<h3>click to Enjoy the songs...</h3>
+			<i id="current"></i><i id="total"></i><br>
+			<center>
+				<input type="range" name="my-musics" id="ranges">
+				<img src="assets/volume.png" id="boom">
+				<input type="range" id="sound" min="0" max="100"></center><br>
+			<button id="size" onclick="change1();">Previous</button>
+			<button id="size" onclick="changesize();">Size</button>
+			<button id="btn" onclick="change();">Next</button>
+		</div>
+	</div>
+	<audio id="mysong"></audio>
+	<script type="text/javascript">
+		var mysong = document.getElementById('mysong');
+		var icon = document.getElementById('icon');
+		var back = document.getElementById('musicPic');
+		var size = document.getElementById('size');
+		var ranges = document.getElementById('ranges');
+		var boom = document.getElementById('boom');
+		var sound = document.getElementById('sound');
+		var current = document.getElementById('current');
+		var total = document.getElementById('total');
+		var choose = document.getElementById('choose');
+		var i=1;
+		var j=10;
+		var g,m,m1,s,source;
+		choose.onchange = function(event){
+			source = URL.createObjectURL(event.target.files[0]);
+			console.log(source);
+			mysong.src = source;
+			mysong.play();
+			chaneVolume(); 
+			icon.src="assets/pause.png";
+		}
+		function player(){
+			if (mysong.paused) {
+				mysong.src="assets/musics/song"+i+".mp3";
+				mysong.play();
+				chaneVolume()
+				icon.src="assets/pause.png";
+			}
+			else{
+				mysong.pause();
+				icon.src="assets/play.png";
+			}
+		}
+		function change(){
+			i=i+1;
+			if (i==j) {
+				i=1;
+			}
+			mysong.src="assets/musics/song"+i+".mp3";
+			mysong.play();
+			chaneVolume()
+			icon.src="assets/pause.png";
+		}
+		function change1(){
+			i=i-1;
+			if (i==0) {
+				i=j-1;
+			}
+			mysong.src="assets/musics/song"+i+".mp3";
+			mysong.play();
+			chaneVolume()
+			icon.src="assets/pause.png";
+		}
+		function changesize(){
+			j=prompt("Enter ending range..");
+		}
+		mysong.onloadedmetadata=function(){
+			ranges.max = mysong.duration;
+			ranges.value = mysong.currentTime;
+		}
+		if(mysong.play()){
+
+				setInterval(()=>{
+					ranges.value = mysong.currentTime;
+					g = Math.floor(ranges.value % 60);
+					m1 = Math.floor(ranges.value / 60);
+					if(m1<10){
+						if (g<10) {current.innerHTML ="0" + m1 +" : 0"+ g;}
+						else{current.innerHTML ="0" + m1 +" : "+ g;}
+					}
+					else{
+						if (g<10) {current.innerHTML = m1 +" : 0"+ g;}
+						else{current.innerHTML = m1 +" : "+ g;}
+					}
+					m = Math.floor(mysong.duration/60);
+					s = Math.floor(mysong.duration % 60);
+					if (m<10) {
+						if (s<10) {total.innerHTML = "0"+m+ " : 0"+s;}
+						else{total.innerHTML = "0"+m+ " : "+s;}
+					}
+					else{
+						if (s<10) {total.innerHTML = m + " : 0" + s;}
+						else{total.innerHTML = m + " : " + s;}
+					}
+					if (mysong.currentTime == mysong.duration) {
+						i=i+1;
+						if (i==j) {i=1;}
+						mysong.src="assets/musics/song"+i+".mp3";			
+						mysong.play();
+					}
+				},500);
+		}
+		ranges.onchange=function(){
+			mysong.play();
+			chaneVolume();
+			mysong.currentTime = ranges.value;
+			icon.src="assets/pause.png";
+		}
+
+		boom.onmouseover=function(){
+			sound.style.display='inline-block';
+			boom.style.display = 'none';
+		}
+		sound. onmouseleave=function(){
+			sound.style.display = 'none';
+			boom.style.display = 'inline-block';
+		}
+		sound.onchange=function(){chaneVolume();}
+		function chaneVolume(){
+			mysong.volume = sound.value/100;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+body{
+    background-color: rgb(20, 20, 20);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+iframe{
+    width:1060px; height:515px;
+}
+.main{
+    height: 100vh;
+    width: 90%;
+    margin: 10px;
+    position: relative;
+    background-image: url('asset/IMG_20240106_151225.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: change 25s linear infinite;
+}
+h2{
+    color: blueviolet;
+    margin: 10px;
+    margin-top: 50px;
+    text-align: center;
+}
+@keyframes change{
+    0%{background-image: url('asset/IMG_20240106_151225.jpg');}
+    20%{background-image: url('asset/IMG_20240106_151225.jpg');}
+    30%{background-image: url('asset/IMG_20231111_150731_923.jpg');}
+    40%{background-image: url('asset/IMG_20231111_150731_923.jpg');}
+    50%{background-image: url('asset/20230704_151836.jpg');}
+    70%{background-image: url('asset/20230704_151836.jpg');}
+    85%{background-image: url('asset/20230704_151813.jpg');}
+    95%{background-image: url('asset/20230704_151813.jpg');}
+}
+@media (max-width : 800px){
+    .main{
+        height: 200px;
+    }
+    iframe{
+        width:fit-content; height:200px;
+    }
+}

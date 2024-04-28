@@ -1,0 +1,130 @@
+.body{
+    margin: 0%;
+    padding: 0%;
+    background-image: url(pexels-photo.jpeg);
+    position: relative;
+    background-size: cover;
+}
+.content1{
+    color: azure;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 30px;
+}
+.content1 h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    margin-top: 100px;
+    color: rgb(255, 221, 0);
+}
+.img{
+    width: 350px;
+    float: right;
+    margin: 30px;
+    height: 500px;
+}
+.pic p{
+    font-size: 25px;
+    text-align: center;
+    margin-left: 40px;
+    padding: 10px;
+    margin-right: 400px;
+    border: 2px solid rgb(62, 61, 61);
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.861);
+    box-shadow: 1px 1px 15px 2px rgb(100, 99, 100);
+    line-height: 1.5;
+}
+.contact-btn{
+    color: rgb(255, 136, 0);
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 8px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1.5px solid rgb(225, 255, 0);
+}
+.contact-btn:hover{
+    background-color: rgb(221, 255, 0);
+    color: rgb(0, 0, 0);border: 1.5px solid rgb(64, 1, 51);
+    box-shadow: 2px 3px 8px 2px rgba(236, 255, 90, 0.898);
+}
+.pic i{
+    color: rgb(55, 255, 0);
+}
+.home{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 18px;
+}
+.home h1{
+    color: rgb(8, 0, 255);
+}
+.form-size{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#form{
+    background: rgb(3, 89, 117);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 15px 2px rgb(171, 146, 62);
+    padding: 2vw 4vw;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+#form h1{
+    color: rgb(13, 255, 0);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+#form input, #form textarea{
+    border: 0;
+    margin: 10px;
+    padding: 20px;
+    outline: none;
+    font-size: 16px;
+}
+#form button{
+    padding: 15px;
+    background: rgb(233, 89, 0);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    width: 150px;
+    margin: 20px auto 0;
+    border-radius: 25px;
+}
+#form button:hover{
+    background: rgb(255, 0, 217);
+    width: 250px;
+}
+.info{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    color: aliceblue;
+    background-color: rgb(48, 48, 48);
+    padding: 15px;
+}
+.info table{
+    font-size: 20px;
+    line-height: 2.5;
+}
+.info ul li{
+    display: inline-block;
+    padding: 10px;
+}
+.info ul li a{
+    text-decoration: none;
+}
+.copy{
+    background-color: rgb(61, 61, 61);
+    margin:0;
+    color: beige;
+    text-align: center;
+    padding: 5px;
+}

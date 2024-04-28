@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: rgb(18, 18, 19);
+}
+.circle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50Px;
+    height:50px;
+    border-radius: 50%;
+    border: 5px solid rgb(38, 0, 255);
+    border-top: 5px solid  rgb(255, 255, 255);
+    animation: loding 2s infinite linear;
+}
+@keyframes loding{
+    0%{
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the word</title>
+    <script type="text/javascript">
+        function search(){
+            var sentence=form1.input.value;
+            var neededword=prompt("Enter the word to be searched..."+"");
+            var temp=sentence.split("");
+            for(var i=0;i<temp.length;i++){
+                if(temp[i]==neededword){
+                    alert("The word is at the position :"+(i+1));
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="" name="form1">
+        <b>Enter the sentence</b>
+        <input type="text" name="input"><br>
+        <input type="button" name="click me" value="Submit" id="" onclick="search()">
+    </form>
+</body>
+</html>

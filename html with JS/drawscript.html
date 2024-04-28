@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drowscript</title>
+    <script type="text/javascript">
+        var color=new Array('#ff0000','#ff00ff','#ooffoo','#ffffoo');
+        function drawscript(id){
+            if(document.getElementById){
+                var table=document.getElementById(id);
+                var rows=document.getElementsByTagName("td");
+                var wd,ht;
+                var i=0;
+                while(i<=rows.length){
+                    wd=prompt("Enter width :");
+                    ht=prompt("Enter height :");
+                    w=Number(wd);
+                    h=Number(ht);
+                    display(rows[i],i,w,h);
+                    i++;
+                }
+            }
+        }
+        function display(row,i,w,h){
+            row.style.backgroundcolor=colors[i%colors.length];
+            row.style.width=w;
+            row.style.height=h;
+        }
+    </script>
+</head>
+<body onload="drawscript('mytable')">
+    <table id="mytable" callspacing="10"callpadding="10">
+        <tr><td>strip1</td></tr>
+        <tr><td>strip2</td></tr>
+        <tr><td>strip3</td></tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>selection</title>
+	<link rel="stylesheet" type="text/css" href="dec.css">
+</head>
+<body id="body" onkeypress="fun();">
+	<div id="menu"><abbr title="Menu">=</abbr></div>
+	<div id="options">
+		<ul>
+			<li>Card Color:<input type="color" class="col" value="red"></li>
+			<li>Body Color:<input type="color" class="img"></li>
+			<li><button>Back</button></li>
+		</ul>
+	</div>
+	<div id="main">
+		<div class="in" onclick ="fun1();" id="id1"><center><img src="vinoth.jpg"></center><h3>Vinoth.A</h3><button></button></div>
+		<div class="in" onclick ="fun2();" id="id2"><center><img src="img76.jpg"></center><h3>Saravanakumar.T</h3><button></button></div>
+		<div class="in" onclick ="fun3();" id="id3"><center><img src="img86.jpg"></center><h3>Santhosh.P.A</h3><button></button></div>
+	</div>
+	<center><div id="close" onclick="fun();"></div></center>
+	<script type="text/javascript">
+		var box1 = document.getElementById('id1');
+		var box2 = document.getElementById('id2');
+		var box3 = document.getElementById('id3');
+		var init = document.getElementById('body');
+		var menu = document.querySelector('#menu');
+		var options = document.querySelector('#options');
+		var main = document.querySelector('#main');
+		var color = document.querySelector('#options ul li .col');
+		var image = document.querySelector('#options ul li .img');
+		var btn1 = document.querySelector('#id1 button');
+		var btn2 = document.querySelector('#id2 button');
+		var btn3 = document.querySelector('#id3 button');
+		var close = document.getElementById('close');
+		var home = document.querySelector('#options ul li button');
+
+		home.onclick=function(){
+			options.style.display ='none';
+			main.style.display = 'flex';
+			menu.style.display = 'block';
+		}
+		function fun1(){
+			init.style.background = 'gray';
+			box2.style.display='none';
+			box3.style.display='none';
+			box1.style.width = '250px';
+			box1.style.height = '350px';
+			close.style.display = 'block';
+			close.innerHTML = 'close';
+			btn1.innerHTML = 'View Profile';
+			btn1.style.display = 'block';
+		}
+		function fun2(){
+			init.style.background = 'gray';
+			box1.style.display='none';
+			box3.style.display='none';
+			box2.style.width = '250px';
+			box2.style.height = '350px';
+			close.style.display = 'block';
+			close.innerHTML = 'close';
+			btn2.innerHTML = 'View Profile';
+			btn2.style.display = 'block';
+		}
+		function fun3(){
+			init.style.background = 'gray';
+			box1.style.display='none';
+			box2.style.display='none';
+			box3.style.width = '250px';
+			box3.style.height = '350px';
+			close.style.display = 'block';
+			close.innerHTML = 'close';
+			btn3.innerHTML = 'View Profile';
+			btn3.style.display = 'block';
+		}
+		function fun(){
+			box1.style.display='flex';
+			box2.style.display='flex';
+			box3.style.display='flex';
+			close.style.display ='none';
+			box1.style.width = '200px';
+			init.style.background = image.value;
+			box2.style.width = '200px';
+			box3.style.width = '200px';
+			box1.style.height = '300px';
+			box2.style.height = '300px';
+			box3.style.height = '300px';
+			btn1.style.display = 'none';
+			btn2.style.display = 'none';
+			btn3.style.display = 'none';
+		}
+		btn1.onclick = function(){
+			var url = "https://www.linkedin.com/in/vinoth-a-629b13285";
+			window.open(url);
+		}
+		btn2.onclick = function(){
+			var url = "https://www.linkedin.com/in/vinoth-a-629b13285";
+			window.open(url);
+		}
+		btn3.onclick = function(){
+			var url = "https://www.linkedin.com/in/vinoth-a-629b13285";
+			window.open(url);
+		}
+		menu.onclick=function(){
+			options.style.display ='block';
+			main.style.display = 'none';
+			menu.style.display = 'none';
+		}
+		box1.style.background = color.value;
+		box2.style.background = color.value;
+		box3.style.background = color.value;
+		init.style.background = image.value;
+	</script>
+</body>
+</html>

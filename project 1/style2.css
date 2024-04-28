@@ -1,0 +1,53 @@
+body{
+    margin:0%;
+    padding: 1px;
+    background-image:url("img86.jpg");
+    position: relative;
+    background-position: center;
+    background-size: cover;
+}
+#login .login{
+    background-color:   rgba(247, 15, 139, 0.341); 
+    height: 30rem;
+    width: 30rem;
+    margin-top: 20vh;
+}
+.login h3{
+    padding: auto;
+    text-align: center;
+    color: rgb(250, 187, 41);
+}
+.login td{
+    text-align: center;  
+    color: rgb(255, 255, 255);  
+}
+.butn{
+    text-decoration: none;
+    font-size: medium;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: .5rem;
+    margin-top: 15px;
+    border-radius: 5px;
+    padding-bottom: .5rem;
+    display: inline-block;
+    background-color: rgb(187, 220, 40);
+}
+.butn:hover{
+    background-color: rgba(0, 228, 244, 0.68);
+    color: rgb(0, 0, 255);
+    font-size: large;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+a{
+    text-decoration: none;
+}
+a h4{
+    background-color: aliceblue;
+    display: inline-block;
+    padding: .5rem;
+    font-size: medium;
+    color: rgb(13, 6, 154);
+    border-radius: 29px;
+}

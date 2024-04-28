@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: rgba(15, 15, 15, 0.932);
+    color: beige;
+}
+.main{
+    margin: 20pt;
+    padding: 10px;
+}
+.main h1{
+    color: rgb(54, 2, 150);
+    font-size: 40px;
+    animation: animate 10s linear infinite;
+}
+@keyframes animate{
+    0%{filter: hue-rotate(0deg);}
+    100%{filter: hue-rotate(360deg);}
+}
+.contents{
+    margin: 10px;
+}
+.contents div, #add{
+    width: 385px;
+    margin: 15px;
+    height: 250px;
+    float: left;
+    color: yellow;
+    border: 1px solid rgb(54, 54, 54);
+    box-shadow: 0 0 5px 2px #363636;
+}.contents div{
+    margin-top: 5px;
+}
+#add{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;}
+#add i{
+    font-size: 50px;
+}
+#sa{
+    display: none;
+}
+#fill{
+    padding: 20px;
+    width: 90%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid gray;
+    background: rgb(41, 40, 40);
+}
+#fill h3{
+    font-size: 30px;
+}
+#fill input{
+    font-size: 25px;
+    margin: 10px;
+    width: 300px;
+    color: antiquewhite;
+    outline: none;
+    background: #363636;
+    padding: 5px;
+}
+#fill textarea{
+    font-size: 18px;
+    outline: none;
+    width: 500px;
+    color: aliceblue;
+    height: 40vh;
+    background: #363636;
+    padding: 10px;
+}
+#fill button{
+    padding: 10px 15px;
+    background: none;
+    font-size: 15px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: yellow;
+}

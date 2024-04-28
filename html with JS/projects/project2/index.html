@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Enjoy some Music...</title>
+	<link rel="stylesheet" type="text/css" href="design.css">
+</head>
+<body>
+	<div class="container">
+		<div class="main">
+			<nav id="menuIcon">=</nav>
+			<div id="menu">
+				<table>
+					<tr><td><i>Background Color </i></td><td>
+					<input type="color" id="color1"></td></tr>
+					<tr><td><i>Player Color </i></td><td><input type="color" id="color2"></td></tr>
+				</table>
+			</div>
+			<div class="img">
+				<img src="imgs/Foldr.png">
+				<h2>Kannamma unna..</h2>
+				<audio id="song">
+					<source src="musics/Kannamma.mp3" type="audio/mpeg">
+				</audio>
+				<div id="inputs">
+					<p id="time"></p>
+					<input type="range" value="0" id="progress">
+					<input type="range" min="0" max="100" value="30" id="vol">
+				</div>
+				<br>
+				<div class="controls">
+					<button><</button>
+					<button id="icon" onclick="songsfun();">p</button>
+					<button>></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		let progress = document.getElementById('progress');
+		let song  = document.getElementById('song');
+		let icon = document.getElementById('icon');
+		let vol = document.getElementById('vol');
+		var time = document.getElementById('time');
+		var menu = document.getElementById('menu');
+		var color1 = document.getElementById('color1');
+		var color2 = document.getElementById('color2');
+		var menuIcon = document.getElementById('menuIcon');
+
+		menuIcon.onmouseenter = function(){
+			menu.style.display =  'block';
+			menuIcon.style.background = 'blue';
+		}
+		menu.onmouseleave = function(){
+			menu.style.display =  'none';
+			menuIcon.style.background = 'darkgreen';
+		}
+		color1.onchange = function(){
+			document.querySelector('.container').style.background = color1.value;
+		}
+		color2.onchange = function(){
+			document.querySelector('.main').style.background = color2.value;
+		}
+		song.onloadedmetadata=function(){
+			progress.max = song.duration;
+			progress.value = song.currentTime;
+		}
+		function songsfun(){
+			if(song.paused){
+				song.play();
+				changesound();
+			}
+			else{
+				song.pause();			
+			}
+		}
+		if(song.play()){
+
+				setInterval(()=>{
+					progress.value = song.currentTime;
+					var g=Math.floor(progress.value/60);
+					var t = Math.floor(progress.value%60);
+					if(g<10){
+						if(t<10){time.innerHTML="0"+g+" : 0"+t+"s";}
+						else{time.innerHTML="0"+g+" : "+t+"s";}
+					}
+					else{
+						if(t<10){time.innerHTML=g+" : 0"+t+"s";}
+						else{time.innerHTML=g+" : "+t+"s";}
+					}
+				},500);
+		}
+
+		progress.onchange = function(){
+			song.play();
+			song.currentTime = progress.value;
+		}
+		vol.onchange = function(){
+			changesound();
+		}
+		function changesound(){
+			song.volume = vol.value/100;
+		}
+	</script>
+</body>
+</html>

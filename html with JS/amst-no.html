@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>armstrong using js</title>
+</head>
+<body>
+    <table border="1">
+        <th><h2>ARMSTRONG NUMBER</h2></th>
+        <script type="text/javascript">
+            var n,i,t,s;
+            i=1;
+            r=0;
+            while(i<=1000)
+            {
+                n=i;
+                s=0;
+                while(n>0)
+                {
+                    r=n%10;
+                    r=parseInt(r);
+                    n=n/10;
+                    n=parseInt(n);
+                    s=s+(r*r*r);
+                }
+                if(s==i)
+                {
+                    document.writeln("<tr><td>"+i+"</td></tr>");
+                }
+                i++;
+            }
+        </script>
+    </table>
+</body>
+</html>

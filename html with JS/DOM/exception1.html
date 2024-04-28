@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divide by zero!!!</title>
+</head>
+<body>
+    <p>Enter some number :</p>
+    <input type="text" id="numerator">
+    <input type="text" id="denominator">
+    <button type="button" onclick="div()">check result</button><br>
+    <p id="myid"></p>
+    <script type="text/Javascript">
+        function div(){
+            var n,rest,msg,num;
+            msg=document.getElementById("myid");
+            d=document.getElemetById("denominator").value;
+            try{
+                if(d=="")
+                throw "Empty";
+                if(isNaN(d))
+                throw "nat a number";
+                num=Number(d)
+                if(num==0)
+                throw "Divide by zero!!";
+                else
+                {
+                    n=document.getElemetById("numerator").value;
+                    n=Number(n);
+                    rest=n/num;
+                    msg.innerHTML=""+rest;
+                }
+            }
+            catch(Error){
+                 msg.innerHTML="Error:"+Error;
+            }
+        }
+    </script>
+</body>
+</html>

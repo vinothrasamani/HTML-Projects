@@ -1,0 +1,77 @@
+		body{
+			margin: 0;
+			padding: 0;
+			height: 100vh;
+			background: #000e;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			color: yellow;
+			font-size: 2em;
+		}
+		#clock, #watch, #alarmsrc{
+			background: #000a;
+			padding: 10px;
+			text-align: center;
+			width: 45%;
+			font-size: 1.5em;
+			border-radius: 15px;
+			border: 4.5px solid blue;
+			box-shadow: 0 0 15px 4px blue;
+			animation: code 5s linear infinite;
+		}
+
+		@keyframes code{
+			0%{filter: hue-rotate(0deg);}
+			100%{filter: hue-rotate(360deg);}
+		}
+		i{
+			padding: 5px 25px;
+			background: green;
+			border-radius: 20px;
+			color: white;
+			border: 2px solid gray;
+			cursor: pointer;
+			font-size: .7em;
+		}
+		#select{
+			padding: 10px;
+			color: blue;
+			font-size: .7em;
+			background: darkgreen;
+			border: 2px solid black;
+			display: none;
+			position: absolute;
+			transform: translateY(-200px);
+		}
+		#select table td{
+			padding: 5px;
+		}
+		#watch button, #alarmsrc button{
+			background: pink;
+			padding: 5px;
+			cursor: pointer;
+			font-size: .6em;
+			width: 120px;
+			height: 40px;
+			margin-left: 15px;
+			border-radius: 15px;
+		}
+		#select table tr:hover{
+			cursor: pointer;
+		}
+		#watch{
+			display: none;
+		}
+		#alarmsrc{
+			display: none;
+		}
+		#alarmsrc input{
+			background: none;
+			border: none;
+			outline: none;
+			font-size: 1em;
+			width: 60px;
+			color: yellow;
+		}

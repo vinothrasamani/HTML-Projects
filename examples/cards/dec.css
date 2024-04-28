@@ -1,0 +1,91 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-style: serif;
+}
+body{background-color: black;}
+#main .in{
+	width: 200px;
+	justify-content: center;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	color: yellow;
+	border: 1px solid lightgray;
+	height: 300px;
+	margin: 10px;
+	cursor: pointer;
+	border-radius: 15px;
+}
+#main{
+	display:flex;
+	justify-content: center;
+	flex-direction: row;
+	text-align: center;
+	width: 100%;
+	margin-top: 10%;
+	height: 50vh;
+}
+
+
+#close{
+	width: 200px;
+	height: 20px;
+	margin-top: 5%;
+	border: 1.5px solid black; 
+	cursor: pointer;
+	color: red;
+	border-radius: 5px;
+	text-align: center;
+	align-content: center;
+	padding: 1.5px;
+	background-color: green;
+	display: none;
+}
+
+#main .in img{
+	margin: 20px;
+	height: 150px;
+	width: 150px;
+	border-radius: 50%;
+}
+#id1 button, #id2 button, #id3 button{
+	margin: 10px;
+	padding: 5px;
+	border-radius: 5px;
+	display: none;
+	margin-top: 15px;
+	background-color: lightblue;
+}
+#menu{
+	cursor: pointer;
+	width: 35px;
+	height: 30px;
+	margin: 10px;
+	float: right;
+	border-radius: 2px;
+	text-align: center;
+	font-size: 25px;
+	background-color: gray;
+}
+
+#menu:hover{
+	background-color: green;
+}
+#options{
+	background-color: gray;
+	width: 300px;
+	margin-top: 50px;
+	margin-left: 40%;
+	display: none;
+	padding: 30px;
+}
+#options ul li{
+	list-style: none;
+	margin-top: 15px;
+}
+#options ul li:nth-child(3) button{
+	background: green;
+	width: 100%;
+	font-size: 22px;
+}

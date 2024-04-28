@@ -1,0 +1,50 @@
+body{
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	background-color: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.outer{
+	background: #000e;
+	width: 26em;
+	color: blue;
+	box-shadow: 0 0 15px 5px gray;
+	padding: 10px;
+	border-radius: 10px;
+}
+.screen{
+	background: rgb(174,525,525);
+	padding: .1px 10px;
+	margin: 5px 5px;
+	margin-bottom: 10px;
+	border-radius: 6px;
+	box-shadow: 0 0 6px 1px gray;
+}
+.outer i{
+	float: right;
+	color: #96efff;
+	margin-right: 5px;
+}
+.screen h4{
+	color: gray;
+}
+#btnss button{
+	width: 82.5px;
+	height: 60px;
+	cursor: pointer;
+	background: rgb(23,45,45);
+	border: none;
+	box-shadow: 0 0 6px 1px gray;
+	margin: 10px;
+	font-size: 2em;
+}
+
+#btnac, #btndel, #btnm, #btnp, #btnmi, #btns, #btnd{
+	color: #ee7214;
+}
+#btnequal{
+	color: red;
+}

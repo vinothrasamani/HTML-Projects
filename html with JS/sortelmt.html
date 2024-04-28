@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>soting function</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function getelement(arr) {
+            i=0;
+            for(i in arr)
+            {
+                document.write(arr[i],"<br>");
+                i++;
+            }
+        }
+        function sort(arr){
+            for(i=0;i<arr.length-1;i++)
+            {
+                for(j=i+1;j<arr.length;j++){
+                    if(arr[i]>arr[j]){
+                        temp=arr[i];
+                        arr[i]=arr[j];
+                        arr[j]=temp;
+                    }
+                }
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        var ary=new Array(3);
+        n=prompt("Enter the size of an array...");
+        for(i=0;i<n;i++)
+        {
+            ary[i]=prompt("The element "+i+" is :")
+        }
+        document.write("Before sorting the elements...<br>");
+        getelement(ary);
+        sort(ary);
+        document.write("After sorting the elements...<br>");
+        getelement(ary);
+    </script>
+</body>
+</html>

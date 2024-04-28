@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            animation: animate 5s linear infinite;
+            background: rgb(70, 69, 69);
+        }
+        @keyframes animate{
+            0%{filter: hue-rotate(0deg);}
+            100%{filter: hue-rotate(360deg);}
+        }
+        section .loader{
+            position: relative;
+            width: 100px;
+            height: 100px;
+        }
+        section .loader span{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60%;
+            height: 60%;
+            transform: rotate(calc(18deg * var(--i)));
+        }
+        section .loader span::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 60%;
+            width: 10px;
+            height: 10px;
+            background: #ffff00;
+            box-shadow: 0 0 10px #ffff00,
+                        0 0 20px #ffff00,
+                        0 0 40px #ffff00,
+                        0 0 60px #ffff00
+                        0 0 80px #ffff00,
+                        0 0 100px #ffff00;
+            animation: anim 2s linear infinite;
+            animation-delay: calc(0.2s * var(--i));
+        }
+        @keyframes anim{
+            0%{transform: scale(1);}
+            80%,100%{transform: scale(0);}
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="loader">
+            <span style="--i:1;"></span>
+            <span style="--i:2;"></span>
+            <span style="--i:3;"></span>
+            <span style="--i:4;"></span>
+            <span style="--i:5;"></span>
+            <span style="--i:6;"></span>
+            <span style="--i:7;"></span>
+            <span style="--i:8;"></span>
+            <span style="--i:9;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:11;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:16;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:20;"></span>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>details</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: rgb(47, 47, 47);
+            overflow-x: hidden;
+        }
+        img{
+            width: 120px;
+            height: 120px;
+            margin-left: 65px;
+            margin-top: 20px;
+            border-radius: 50%;
+        }
+        img:hover{
+            box-shadow: 2px 3px 10px 2px rgb(37, 202, 0);
+            width: 130px;
+            height: 130px;
+        }
+        .container{
+            width: 100%;
+            height: 100%;
+            padding-left: 35px;
+            margin-top: 40px;
+        }
+        .container ul li{
+            display:block;
+            width: 100px;
+            padding: 10px;
+            font-size: 20px;
+        }
+        .container ul li a{
+            text-decoration: none;
+            color: aliceblue;
+        }
+        .container ul li a:hover{ 
+            color: rgb(242, 255, 0);
+            animation: reg-anim 5s linear infinite;
+            border-bottom: 2px solid rgb(255, 0, 212);
+        }
+        @keyframes reg-anim{
+            0%{
+                filter: hue-rotate(0deg);
+            }
+            100%{
+                filter: hue-rotate(360deg);
+            }
+        }
+        hr{
+            width: 200px;
+            color: rgb(255, 64, 0);
+        }
+        .icons{
+            margin-top: 20px;
+        }
+        .icons ul li{
+            display: inline-block;
+            width: 50px;
+            margin-top: 10px;
+        }
+        i:hover{
+            animation: reg-anim 5s linear infinite;
+        }
+        marquee{
+            color: aqua;
+            font-family:sans-serif;
+            font-size: 18px;
+            animation: reg-anim 3s linear infinite;
+        }
+        .img h2{
+            margin-left: 67px;
+            color: rgb(255, 2, 238);
+        }
+    </style>
+</head>
+<body>
+    <div class="img">
+        <a href="my-profile.jpg" target="contents"><img src="my-profile.jpg" alt="Profile"></a><br>
+        <b><h2>VINOTH.A</h2></b>
+    </div>
+    <div class="container">
+        <ul>
+            <li><a href="content.html" target="contents">Home</a></li>
+            <li><a href="about.html" target="contents">about me</a></li>
+            <li><a href="resume.html" target="contents">Resume</a></li>
+            <li><a href="skills.html" target="contents">skills</a></li>
+            <li><a href="projects.html" target="contents">Projects</a></li>
+            <li><a href="contact.html" target="contents">Contact</a></li>
+        </ul>
+    </div>
+    <hr>
+    <div class="icons">
+        <ul>
+            <li class="medias"><a href="" target="contents"> <abbr title="Whatsapp" style="background:none;margin:15px;">
+                <i class="fa-brands fa-whatsapp fa-xl" style="background:none; color: #077c05;"></i></abbr></a></li>
+            <li class="medias"><a href="https://www.facebook.com/profile.php?id=100094141524250&mibextid=ZbWKwL" target="new"><abbr title="Facebook" style="background:none; margin:15px;">
+                <i class="fa-brands fa-facebook fa-lg" style="color: #0162f4; background:none;"></i>
+                </abbr></a></li>
+             <li class="medias"><a href="mailto:vinothrasamani@gmail.com" target="contents"><abbr title="Email" style="background:none;margin:15px;">
+                <i class="fa-regular fa-envelope fa-xl" style="color: #1b61da;background:none;"></i>
+                </abbr></a></li>
+        </ul>
+        <ul>
+            <li class="medias"><a href="https://www.linkedin.com/in/vinoth-a-629b13285" target="new"><abbr title="Linkedin" style="background:none;margin:15px;">
+                <i class="fa-brands fa-linkedin fa-xl" style="color: #2d68ce;"></i>
+                </abbr></a></li>
+            <li class="medias"><a href="https://twitter.com/49_vinoth_cse/" target="new"><abbr title="Twitter" style="background:none;margin:15px;">
+                <i class="fa-brands fa-square-twitter fa-xl"></i>
+                </abbr></a></li>
+        </ul>
+        <marquee behavior="" direction="left">&LeftAngleBracket; Web Developers &RightAngleBracket;</marquee>
+    </div>
+</body>
+</html>

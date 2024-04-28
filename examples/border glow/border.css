@@ -1,0 +1,19 @@
+body{
+	margin: 0;
+	padding: 0;
+	background: black;
+}
+
+.main{
+	position: relative;
+	margin: 10% auto 0;
+	width: 50%;
+	height: 400px;
+	background: linear-gradient(0deg, black, gray);
+}
+
+.glow::before, .glow::after{
+	content: '';
+	position: absolute;
+	background: linear-gradient(45deg,yellow,orange,blue,green);
+}

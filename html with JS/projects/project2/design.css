@@ -1,0 +1,90 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container{
+	width: 100%;
+	height: 100vh;
+	background: #334;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.main{
+	background: green;
+	width: 400px;
+	padding: 25px 35px;
+	text-align: center;
+}
+#menu{
+	width: 24%;
+	background-color: blue;
+	padding: 1em;
+	position: fixed;
+	text-align: left;
+	transform: translateY(-2px);
+	transform: translateX(2px);
+	border: 1.5px solid gray;
+	display: none;
+}
+#menu table tr td{
+	padding-right: 10px;
+}
+.main nav{
+	font-size: 30px;
+	color: blue;
+	float: right;
+	width: 40px;
+	border-radius: 6px;
+	height: 40px;
+	cursor: pointer;
+	background: darkgreen;
+	padding: 2px;
+}
+
+.main nav:hover{
+	background: #0f05;
+	color: black;
+}
+.main img{
+	margin-top: 50px;
+	width: 150px;
+	border: 2px solid gray;
+	box-shadow: 0 1px 5px white;
+	height: 150px;
+	border-radius: 50%;
+}
+.main h2{
+	color: #623;
+	margin: 10px 0;
+}
+
+#progress{
+	-webkit-appearance:none;
+	width: 100%;
+	height: 5px;
+	background: yellow;
+	border-radius:3px;
+	cursor: pointer;
+	margin: 15px 0
+}
+
+.main button{
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	font-size: 22px;
+	background: orange;
+	margin: 10px;
+	border-radius: 50%;
+}
+
+.main button:nth-child(2){
+	transform: scale(1.4);
+	background-color: darkorange;
+	color: white;
+}

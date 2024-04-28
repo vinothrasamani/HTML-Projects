@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sign up</title>
+    </head>
+    <link rel='stylesheet' type='text/css' media='screen' href='style2.css'>
+    <script type="text/javascript">
+        function myfunc(){
+            var un=document.getElementById("un").value;
+            var pas=document.getElementById("pw").value;
+            if(un==""){
+                alert("Please Enter UserName");
+                un.focus();
+                return false;
+            }
+            if(pas==""){
+                alert("Please Enter Password");
+                pw.focus();
+                return false;
+            }
+        }
+    </script>
+    <body>
+        <form action="signup.php" method="post" id="login"> <center>
+            <table border="2" class="login">
+            <tr><td>
+            <label for="text"><h4>Enter username and password to continue..</h4></label>
+            <br>
+            <h3>User Name :</h3> <input type="text" name="UserName" id="un">
+            <br>
+            <h3>Password :</h3><input type="password" name="password" id="pw">
+            <br><br>
+            <input type="submit" name="submit" class="butn" id="up" value="Sign Up" onclick="myfunc()">
+            <br>
+            <p>I didn't have an account? <a href="login.html">login</a></p>
+            <br>
+            <a href="nature.html"><h4>&LeftArrow;</h4></a>
+            </td></tr>
+            </table>
+            </center>
+        </form>
+    </body>
+</html>

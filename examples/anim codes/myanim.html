@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>more animations</title>
+    <style type="text/css">
+        body{
+            background-color: aqua;
+            animation-name: moreanim;
+            animation-duration: 4s;
+            animation-delay: 2s;
+            animation-iteration-count: none;
+        }
+        @keyframes moreanim{
+            0%{background-color: blue;}
+            5%{background-color: rgb(255, 0, 200);}
+            10%{background-color: rgb(0, 255, 8);}
+            15%{background-color: rgb(217, 255, 0);}
+            20%{background-color: rgb(21, 25, 0);}
+            25%{background-color: rgb(217, 55, 0);}
+            30%{background-color: rgb(10, 162, 227);}
+            35%{background-color: rgb(45, 58, 230);}
+            40%{background-color: rgb(0, 255, 38);}
+        }
+        .san,.sara,.shabari{
+            color: brown;
+            height: 20px;
+            width: 150px;
+            animation-name: san23;
+            animation-duration: 5s;
+            position: relative;
+            animation-iteration-count: 5;
+        }
+        @keyframes san23{
+            0%{font-size: large;color: darkred;left: 0px;top: 0px;}
+            10%{font-size: large;color: rgb(23, 0, 139);left: 500px;top: 0px;}
+            20%{font-size: large;color: rgb(12, 139, 0);left: 500px;top: 500px;}
+            30%{font-size: large;color: rgb(139, 127, 0);left: 0px;top: 500px;}
+            40%{font-size: large;color: darkred;left: 0px;top: 0px;}
+            
+        }
+    </style>
+</head>
+<body>
+        <h1>friends :</h1>
+        <ul>
+            <li class="sara">saravana kumar</li>
+            <li class="shabari">shabarikanth</li>
+            <li class="san">santhosh</li>
+            
+        </ul>
+</body>
+</html>

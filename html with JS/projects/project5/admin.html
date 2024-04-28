@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>thoughts Admin</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="container" class="admin">
+			<form method='POST' id="myform">
+				<h1>Enter New thoughts</h1>
+				<input type="text" id="title" placeholder="Enter sender Name" required>
+				<textarea id="thought" rows="6" placeholder="Enter your new thought.."></textarea>
+				<button id="btn3" type="submit">send</button>
+			</form><a href="index.html">Back</a>
+	</div>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+	<script type="text/javascript">
+		const firebaseConfig = {
+	    apiKey: "AIzaSyB0CDXGdF5_ldDs5dtZNdNXKI1hhMC1fac",
+	    authDomain: "thaughts-9aef7.firebaseapp.com",
+	    databaseURL: "https://thaughts-9aef7-default-rtdb.firebaseio.com",
+	    projectId: "thaughts-9aef7",
+	    storageBucket: "thaughts-9aef7.appspot.com",
+	    messagingSenderId: "47606691109",
+	    appId: "1:47606691109:web:111b88df21c42d6c82d6cc"
+	  };
+
+	  firebase.initializeApp(firebaseConfig);
+	  var appDB = firebase.database().ref('thoughtsapp');
+	  document.getElementById('myform').addEventListener('submit', submitthought);
+
+	  function submitthought(e){
+	  	e.preventDefault();
+	  	var name = val('title');
+	  	var content = val('thought');
+	  	savemsg(name,content);
+	  	console.log(name, content);
+	  	document.getElementById('title').value = "";
+	  	document.getElementById('thought').value = "";
+	  	alert("Send successfully...");
+	  }
+
+	  const savemsg = (name, content) =>{
+	  	var newdata = appDB.push();
+	  	newdata.set({
+	  		name : name,
+	  		Thought : content,
+	  	})
+	  }
+
+	  const val = (id) =>{
+	  	return document.getElementById(id).value;
+	  }
+
+	</script>
+</body>
+</html>

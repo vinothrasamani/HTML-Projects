@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Thoughts</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="screen">
+		<center><img src="assets/logo.png"></center>
+		<div id="inner">
+		</div>
+	</div>
+	<a href="index.html">Back</a><br>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+	<script type="text/javascript">
+		const firebaseConfig = {
+			apiKey: "AIzaSyB0CDXGdF5_ldDs5dtZNdNXKI1hhMC1fac",
+		    authDomain: "thaughts-9aef7.firebaseapp.com",
+		    databaseURL: "https://thaughts-9aef7-default-rtdb.firebaseio.com",
+		    projectId: "thaughts-9aef7",
+		    storageBucket: "thaughts-9aef7.appspot.com",
+		    messagingSenderId: "47606691109",
+		    appId: "1:47606691109:web:111b88df21c42d6c82d6cc"
+		};
+
+	  	firebase.initializeApp(firebaseConfig);
+	  	var view = document.getElementById('inner');
+	  	var firebaseRef = firebase.database().ref('thoughtsapp');
+	  	firebaseRef.once("value", function(snap){
+	  		var datas = snap.val();
+	  		for(let i in datas){
+	  			var division = document.createElement('div');
+	  			var h3 = document.createElement('h3');
+	  			var para = document.createElement('p');
+	  			division.style.background = 'gray';
+	  			division.style.margin = '5px';
+	  			division.style.padding = '5px 10px';
+	  			division.style.borderRadius = '10px';
+	  			console.log(datas[i].name);
+	  			console.log(datas[i].Thought);
+	  			h3.innerHTML = datas[i].name;
+	  			para.innerHTML = datas[i].Thought;
+	  			division.appendChild(h3);
+	  			division.appendChild(para);
+	  			view.appendChild(division);
+	  		}
+	  	})
+	</script>
+</body>
+</html>

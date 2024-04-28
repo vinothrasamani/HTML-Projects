@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Digital Clock</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onload="change();alarm();">
+	<i>Menu</i>
+	<div id="select">
+		<table>
+			<tr><td>Background Color</td><td>:</td><td><input type="color" id="c1"></td></tr>
+			<tr id="digital"><td>Clock</td></tr>
+			<tr id="stop"><td>Stop Watch</td></tr>
+			<tr id="alarm"><td>Sound Alarm</td></tr>
+		</table>
+	</div>
+	<h1 id="heading">Digital Clock</h1>
+	<div id="clock">
+		<i></i>
+		<h3 id="times"></h3>
+	</div>
+	<div id="alarmsrc">
+		<h3><input type="text" id="n1" value="10"> : <input type="text" id="n2" value="38"></h3>
+		<button id="pp">Dismiss</button>
+		<audio src="Kannamma.mp3" id="song"></audio>
+	</div>
+	<div id="watch">
+		<h3 id="sw">00 : 00 : 00 : 00</h3>
+		<abbr title="Play and Pause"><button onclick="pause1();">Pause</button><button onclick="play();">Play</button></abbr><abbr title="Restart"><button onclick="restart();">Restart</button></abbr>
+	</div>
+	<script type="text/javascript" src="index.js"></script>
+	<script type="text/javascript">	
+	var pp = document.getElementById('pp');
+	var song = document.getElementById('song');
+	var n1 = document.getElementById('n1');
+	var n2 = document.getElementById('n2');
+	function alarm(){
+		setInterval(()=>{
+			var day1 = new Date();
+			var hr = day1.getHours();
+			if(hr > 12){hr-=12;}
+			if ((hr == n1.value) && (day1.getMinutes() == n2.value)) {
+				song.play();
+			}
+		},100);
+	}
+
+	n2.onchange = function(){
+		song.src = 'Kannamma.mp3';
+	}
+	n1.onchange = function(){
+		song.src = 'Kannamma.mp3';
+	}
+	pp.onclick = function(){
+		song.pause();
+		song.src = '';
+	}
+	</script>
+</body>
+</html>

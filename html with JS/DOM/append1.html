@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert/append & remove</title>
+</head>
+<body>
+    <div id="div1">
+        <p id="p1">first html</p>
+        <p id="p2">second httml</p>
+    </div>
+    <script type="text/javascript">
+        var pn=document.createElement("p");
+        var n=document.createTextNode("new html");
+        pn.appendChild(n);
+        var e=document.getElementById("div1");
+        var nn=document.getElementById("p1");
+        var netn=document.getElementById("p2");
+        e.insertBefore(pn,nn);
+        e.removeChild(netn);
+    </script>
+</body>
+</html>

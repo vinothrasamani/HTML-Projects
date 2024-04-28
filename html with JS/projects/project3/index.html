@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Video Player</title>
+	<link rel="stylesheet" type="text/css" href="design.css">
+</head>
+<body>
+	<div id="main">
+		<h3>Select and Enjoy the Movies!!</h3>
+		<img src="play.png" id="img"><br>
+		<input type="file" id="files">
+	</div>
+	<div id="content">
+		<video id="src"></video>
+		<img src="play.png" id="img1">
+		<input type="range" id="size" max="100" min="0"><br>
+		<i id="span1">s</i><i id="span2">d</i>
+	</div>
+	<script type="text/javascript">
+		var main = document.getElementById('main');
+		var content = document.getElementById('content');
+		var play = document.getElementById('img');
+		var play1 = document.getElementById('img1');
+		var f = document.getElementById('files');
+		var src = document.getElementById('src');
+		var size = document.getElementById('size');
+		var current = document.getElementById('span1');
+		var total = document.getElementById('span2');
+		var imgsrc;
+		var b=0;
+		var s,s1,m,m1,h,h1,g,p;
+
+		src.onloadedmetadata = function(){
+			size.max = src.duration;
+			size.value = src.currentTime;
+		}
+		f.onchange = function(event){
+			imgsrc = URL.createObjectURL(event.target.files[0]);
+			console.log(event.target.files[0]);
+		}
+		play.onclick = function(){
+			main.style.display = 'none';
+			content.style.display = 'block';
+			src.src= imgsrc;
+			src.play();
+			play1.src = "pause.png";
+			setInterval(()=>{
+				size.value = src.currentTime;
+				s1= Math.floor(size.value % 60);
+				m1 = Math.floor(size.value / 60);
+				g = Math.floor(m1%60);
+				h1 = Math.floor(m1/60);
+				if(g<10){
+					if (s1<10) {current.innerHTML ="0"+h1+" : 0" + g +" : 0"+ s1;}
+					else{current.innerHTML ="0"+h1+" : 0" + g +" : "+ s1;}
+				}
+				else{
+					if (s1<10) {current.innerHTML = "0"+h1+" : "+g +" : 0"+ s1;}
+					else{current.innerHTML = "0"+h1+" : "+g +" : "+ s1;}
+				}
+				m = Math.floor(src.duration/60);
+				s = Math.floor(src.duration % 60);
+				p = Math.floor(m%60);
+				h = Math.floor(m/60);
+				if (p<10) {
+					if (s<10) {total.innerHTML = "0"+h+" : 0"+p+ " : 0"+s;}
+					else{total.innerHTML = "0"+h+" : 0"+p+ " : "+s;}
+				}
+				else{
+					if (s<10) {total.innerHTML = "0"+h+" : "+p + " : 0" + s;}
+					else{total.innerHTML = "0"+h+" : "+p + " : " + s;}
+				}
+				if (src.currentTime == src.duration) {
+					play1.src = "play.png";
+					play1.style.marginLeft = '-52%';
+					play1.style.marginTop ='+22%';
+				}
+			},500);
+		}
+		size.onchange= function(){
+			src.currentTime = size.value;
+			src.play();
+			play1.src = "pause.png";
+			play1.style.marginLeft = '-4.5%';
+			play1.style.marginTop ='+0.5%';
+		}
+		play1.onclick= function(){
+			if(src.paused){
+				src.play();
+				play1.src = "pause.png";
+				play1.style.marginLeft = '-4.5%';
+				play1.style.marginTop ='+0.5%';
+			}
+			else{	
+				src.pause();
+				play1.src = "play.png";
+				play1.style.marginLeft = '-52%';
+				play1.style.marginTop ='+22%';
+			}
+		}
+		content.ondblclick = function(){
+			src.pause();
+			play1.style.marginLeft = '-4.5%';
+			play1.style.marginTop ='+0.5%';
+			main.style.display = 'block';
+			content.style.display = 'none';
+
+		}
+	</script>
+</body>
+</html>

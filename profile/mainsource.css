@@ -1,0 +1,355 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+#contacts{
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    text-align: center;
+}
+.con{
+    background-image: url("digital.jpg");
+}
+#contacts .head{
+    margin-top: 100px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.form-size{
+    width: 100%;
+    height:65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#form{
+    background:rgba(3, 3, 160, 0.877);
+    display: flex;
+    flex-direction: column;
+    padding: 3vw 5vw;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 15px;
+}
+#form h1{
+    color: rgb(13, 255, 0);
+    font-weight: 800;
+    margin-bottom: 60px;
+}
+#form input, #form textarea{
+    border: 0;
+    margin: 13px;
+    color: #ff00d9;
+    border-radius: 2px;
+    padding: 20px;
+    outline: none;
+}
+#form button{
+    padding: 15px 30px;
+    background: #e95900;
+    color: rgb(255, 255, 255);
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    width: 150px;
+    margin: 40px auto 0;
+    border-radius: 25px;
+}
+#form button:hover{
+    background: #ff00d9;
+    width: 250px;
+    transition-duration: .7s;
+}
+.info{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: aliceblue;
+    background-color: rgb(48, 48, 48);
+    padding: 15px;
+}
+.info table{
+    line-height: 2.5;
+}
+.info ul li{
+    display: inline-block;
+    padding: 10px;
+}
+.info ul li a{
+    text-decoration: none;
+}
+.copy{
+    background-color: #585757;
+    margin:0;
+    color: beige;
+    text-align: center;
+    padding: 5px;
+}
+nav ul{
+    margin-right: 20px;
+    list-style: none;
+    box-sizing: border-box;
+}
+.fa-bars{
+    float: left;
+    margin-top: 25px;
+    margin-left: 40px;
+    font-size: 43px;
+    padding: 4px;
+}
+.brightness{
+    margin: 30px 50px;
+    width: 60px;
+    float: right;
+    cursor: pointer;
+    border-radius: 20px;
+    height: 33.5px;
+    background-color: #d2d0d0;
+}
+.brightness .span{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 4.5px solid rgb(181, 181, 181);
+    background-color: #00ff08;
+}
+.fa-bars:hover{
+    border: 2px solid grey;
+    margin-top: 5px;
+    padding: 20px;
+    border-radius: 10px;
+}
+.sub-menu{
+    display: none;
+    width: 90%;
+    font-family: serif;
+    text-align: center;
+}
+.sub-menu a{
+    color: white;
+    text-decoration: none;
+}
+.fa-bars:hover .sub-menu{
+    display: block;
+    border: 2px solid black;
+    position: absolute;
+    background: #010583;
+}
+nav{
+    background-color: rgb(0, 4, 86);
+    height: 100px;
+    width: 100%;
+    font-family: calibri;
+    font-size: 30px;
+    font-weight: bold;
+}
+nav label{
+    color: aliceblue;
+    font-size: 60px;
+    line-height: 100px;
+    padding: 0 50px;
+}
+nav ul li{
+    margin: 0;
+    padding: 15px 0px;
+    border-radius: 5px;
+}
+nav ul li:hover{
+    background: #040ca2;
+}
+nav ul li a{
+    text-decoration: none;
+    color: rgb(238, 238, 238);
+    text-transform: uppercase;
+    line-height: 1.5;
+    
+    border-radius: 3px;
+}
+a.active,a:hover{
+    transition: .5s;
+}
+.contact-btn{
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 8px 20px;
+    color: #9e027f;
+    border: 2.5px solid #9e027f;
+    border-radius: 12px;
+}
+.content1 .para{
+    margin: 10px 50px;
+    line-height: 1.5;
+    text-align: justify;
+}
+.content1 .para p{
+    margin-bottom: 30px;
+}
+.content1 img{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+.content1 .para h1{
+    color: rgb(234, 0, 255);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.content1 marquee hr{
+    width: 800px;
+    border: 2.5px solid rgb(201, 204, 6);
+}
+#skills{
+    background-color: #524e424c;
+    width: 100%;
+    height:auto;
+    padding-bottom: 25px;
+}
+#skills h3{
+    padding-top: 20px;
+    color: #ff0051;
+}
+#skills .skills ul li{
+    list-style:disc;
+    padding: 8px;
+    margin-left: 60px;
+}
+#skills .skills ul li:first-child{
+    font-weight: bold;
+    padding: 20px;
+    font-family: sans-serif;
+    margin: 0;
+    list-style: none;
+}
+#skills .skills{
+    text-align: left;
+    padding-left: 20px;
+}
+#about{
+    margin: 0;
+    padding: 20px;
+}
+#about h3{
+    color: #ff0051;
+}
+#about .aboutme{
+    padding: 6px 40px;
+    text-align: justify;
+    line-height: 1.5;
+    border-radius: 5px;
+    background-color: #000dffb1;
+}
+.add table{
+    margin: 15px;
+}
+.add table tr td{
+    padding: 5px 10px;
+}
+@media (min-width:1000px){
+    #skills .skills{
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(2,1fr);
+        justify-content: center;
+        margin: auto 150px;
+        padding: 0;
+        box-shadow: 2px 2px 10px 3px #c9c5b6d2;
+    }
+    #skills .skills ul li:first-child{
+        margin-left: 60px;
+    }
+    #about .aboutme{
+        text-align: center;
+    }
+    #skills .skills ul li{
+        font-size: 20px;
+    }
+    #skills{
+        width: 100%;
+    }
+    .add table{
+        font-size: 20px;
+    }
+    .contact-btn{
+        padding: 8px;
+    }
+    .brightness .span{
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 2.5px solid rgb(181, 181, 181);
+    }
+    .brightness{
+        margin: 15px;
+        width: 35px;
+        height: 18.5px;
+    }
+    .content1{
+        margin: 20px 50px;
+    }
+    .content1 img{
+        width: 350px;
+        height: 350px;
+        float: right;
+        border-radius: 50%;
+        margin: 30px;
+    }
+    .content1 .para p{
+        margin: 50px;
+        font-size: 20px;
+    }
+    .content1 .para h1{
+        font-size: 40px;
+    }
+    .fa-bars{
+        font-size: 25px;
+        margin-top: 7px;
+    }
+    .fa-bars:hover{
+        margin-top: 0px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .sub-menu{
+        font-size: 20px;
+    }
+    nav{
+        height: 50px;
+        font-size: 18px;
+    }
+    nav label{
+        font-size: 30px;
+        line-height: 50px;
+    }
+    #contacts .head{
+        margin-top: 30px;
+    }
+    #contacts p{
+        font-size: 20px;
+    }
+    .form-size{
+        height: 100vh;
+    }
+    #form{
+        padding: 2vw 4vw;
+        max-width: 500px;
+        border-radius: 8px;
+    }
+    #form h1{
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+    #form input, #form textarea{
+        margin: 10px;
+        font-size: 16px;
+    }
+    #form button{
+        padding: 15px;
+        font-size: 20px;
+        margin: 20px auto 0;
+    }
+    .info table{
+        font-size: 20px;
+    }
+    .copy{
+        font-size: 15px;
+    }
+}

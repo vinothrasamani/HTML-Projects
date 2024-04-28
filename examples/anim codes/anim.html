@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation using css</title>
+    <style type="text/css">
+        body{
+            background-color: darkgreen;
+            animation-name: myanim;
+            animation-duration: 3s;
+            animation-iteration-count: 6;
+
+        }
+        h2{
+            background-color: aqua;
+        }
+        div{
+            background-color: blue;
+            animation-name: mydiv;
+            animation-duration: 4s;
+            animation-iteration-count: 10;
+        }
+        @keyframes myanim{
+            from{background-color: red;}
+            to{background-color: rgb(0, 255, 4);}
+        }
+        @keyframes mydiv{
+            from{background-color: rgb(255, 247, 0);}
+            to{background-color: rgb(0, 179, 255);}
+        }
+    </style>
+</head>
+<body>
+    <h2>Animations :</h2>
+    <div>
+        <h3>hello world</h3>
+        <ol>
+            <li>fruits</li>
+            <li>animals</li>
+            <li>flowers</li>
+            <li>birds</li>
+        </ol>
+    </div>
+</body>
+</html>

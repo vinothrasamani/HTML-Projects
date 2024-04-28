@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Append child 
+    </title>
+</head>
+<body>
+    <div id="div1">
+        <p id="id1">first html</p>
+        <p id="id2">second html</p>
+    </div>
+    <script type="text/javascript">
+
+        var pnode=document.createElement("p");
+        var node=document.createTextNode("This is a newly added html");
+        pnode.appendChild(node);
+        var element=document.getElementById("div1");
+        element.appendChild(pnode);
+    </script>
+</body>
+</html>

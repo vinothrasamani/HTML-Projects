@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="main">
+        <h1>Simple Notes</h1><br>
+        <div id="add">
+            <i>+</i>
+            <p>Add new Notes</p>
+        </div>
+        <div class="contents">
+            
+        </div>
+        <div id="sa">
+            <div id="fill">
+                <h3>Note</h3>
+                <input type="text" id="title" placeholder="Title" required>
+                <textarea id="text" placeholder="Write Note" required></textarea>
+                <button onclick="btnClick();">Save</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var content = document.querySelector('.contents');
+        var add = document.querySelector('#add');
+        var openblock = document.querySelector('#sa');
+        var h3Value = document.querySelector('#title');
+        var noteValue = document.querySelector('textarea');
+
+        add.onclick = function(){
+            openblock.style.display = 'block';
+        }
+
+        function btnClick(){
+            if (h3Value.value == "" || noteValue.value == "") {
+                alert("Please fill all the contents..");
+            }
+            else{
+                var newNote = document.createElement('div');
+                var h3 = document.createElement('h3');
+                var text = document.createElement('p');
+                var del = document.createElement('i');
+                h3.style.borderBottom = '1px solid gray';
+                h3.style.padding = '5px';
+                h3.style.margin = '5px';
+                h3.innerHTML = h3Value.value;
+                del.style.float = 'right';
+                del.style.background = 'gray';
+                del.style.padding = '0 5px';
+                del.style.borderRadius = '50%';
+                del.style.cursor = 'pointer';
+                del.innerHTML = '\u00d7';
+                text.style.margin = '10px';
+                text.style.textIndent = '20px';
+                text.style.lineHeight = '1.5';
+                text.innerHTML = noteValue.value;
+                h3.appendChild(del);
+                newNote.appendChild(h3);
+                newNote.appendChild(text);
+                content.appendChild(newNote);
+                openblock.style.display = 'none';
+                h3Value.value = "";
+                noteValue.value = "";
+                savevent();
+            }
+        }
+
+        content.addEventListener("click", function(e){
+            if(e.target.tagName === 'I'){
+                e.target.parentElement.parentElement.remove();
+                savevent();
+            }
+        },false);
+
+        function savevent(){
+            localStorage.setItem("datas",content.innerHTML);
+        }
+        function showevent(){
+            content.innerHTML = localStorage.getItem("datas");
+        }
+        showevent();
+    </script>
+</body>
+</html>
