@@ -1,0 +1,757 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    color: rgb(204, 204, 204);
+    background: rgb(31, 31, 31);
+}
+.common{
+    width: 100%;
+    height: 100vh;
+    margin-top: -55px;
+    display: none;
+    background: rgba(93, 93, 93, 0.751);
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+}
+/*----------------------nav bar--------------------*/
+#top nav img{
+    border-radius: 50%;
+    width: 40px;
+    cursor: pointer;
+    height: 40px;
+} 
+#top nav{
+    height: 40px;
+    padding: 5px 25px;
+    background: linear-gradient(to top right, rgb(15, 128, 1), rgb(3, 52, 0));
+}
+#top nav .title{
+    display: flex;
+}
+#top nav h1{
+    margin: 10px 20px;
+}
+#top nav a, #foot footer .parts a{
+    text-decoration: none;
+    color: rgb(210, 210, 210);
+}
+#top nav .menu, #top nav .menu-icon{
+    margin-top: -30px;
+    float: right;
+    display: flex;
+    list-style: none;
+}
+#top nav .menu-icon{
+    display: none;
+}
+#top nav .menu li{
+    font-size: 16px;
+    padding: 0 10px;
+}
+#top nav .menu a:hover, #foot footer .parts .part1 a:hover{
+    color: rgb(255, 247, 0);
+    border-bottom: 1.5px solid rgb(196, 196, 196);
+    cursor: pointer;
+}
+
+/*-----------------------------contents--------------------------*/
+#container{
+    height: 92.3vh;
+    flex-wrap: wrap;
+    display: flex;
+    perspective: 1000px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+#container .flip{
+    width: 250px;
+    border-radius: 5px;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    text-align: center;
+    box-shadow: 0 0 10px 2px rgb(213, 213, 213);
+    margin: 15px;
+    border: 2.5px solid rgb(31, 31, 31);
+    height: 60vh;
+    cursor: pointer;
+}
+#container .flip img{
+    margin-top: 40px;
+    border: 1px solid rgb(164, 0, 156);
+    border-radius: 50%;
+    width: 60%;
+}
+#container .flip h3{
+    color: rgb(225, 255, 0);
+}
+#container .flip:hover{
+    transform: rotateY(180deg);
+}
+.front, .back{
+    position: absolute;
+    backface-visibility: hidden;
+} 
+#container .flip .front{
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background:linear-gradient(rgb(26, 0, 128), rgb(178, 0, 205));
+}
+#container .flip .back{
+    transform: rotateY(-180deg);
+    padding: 15px;
+    border-radius: 5px;
+    height: 92.2%;
+    background:linear-gradient(rgb(192, 47, 160), rgb(213, 121, 0));
+}
+#container .flip .back button{
+    padding: 8px 40px;
+    margin-top: 20px;
+    border: 1.5px solid rgb(189, 14, 14);
+    background: none;
+    cursor:pointer;
+    font-size: 15px;
+    border-radius: 10px;
+}
+#container .flip .back button:hover{
+    background: rgb(152, 152, 152);
+}
+
+/*------------------------Achivements------------------*/
+#achivements{
+    min-height: 92.3vh;
+    width: 100%;
+}
+#achivements h1{
+    text-align: center;
+    color: yellow;
+}
+#achivements .add-achive{
+    text-align: center;
+    border-radius: 3px;
+    margin: 20px 150px;
+    padding: 5px;
+    box-shadow: 0 0 10px 2px gray;
+} 
+#achivements .add-achive div{
+    margin: 10px;
+}
+#achivements .add-achive input, #photos .upload-img input, #videos .upload-vedio input{
+    margin: 5px;
+    border: 1.5px solid rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    background: linear-gradient(90deg, rgb(229, 118, 0), rgb(149, 0, 147));
+}
+#achivements .achivements-list{
+    margin: 25px 15px;
+}
+#achivements .achivements-list .list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#achivements .achivements-list .img{
+    width: 180px;
+    background-color: rgb(51, 51, 51);
+    border-radius: 3px;
+    padding: 2px;
+    margin: 10px;
+    box-shadow: 0 0 10px 0px white;
+    height: 130px;
+    overflow: hidden;
+}
+#achivements .achivements-list .img div{
+    display: inline-flex;
+    overflow: hidden;
+    color: aliceblue;
+    padding: 5px;
+}
+#achivements .achivements-list .img div i{
+    margin: 3px;
+    overflow: hidden;
+}
+#achivements .achivements-list .img img{
+    width: 100%;
+    height: 75%;
+}
+
+/*------------------------Photos-------------------------*/
+#photos, #videos{
+    text-align: center;
+    min-height: 90vh;
+}
+#photos button{
+    padding: 0px 12px;
+    box-shadow: 0 0 10px 1px rgb(43, 227, 202);
+    position: fixed;
+    cursor: pointer;
+    font-size: 40px;
+    border: none;
+    background: blue;
+    color: rgb(255, 247, 0);
+    border-radius: 5px;
+    margin-top: 68vh;
+    margin-left: 42%;
+}
+#photos .upload-img{
+    width: 80%;
+    position: fixed;
+    display: none;
+    margin-left: 130px;
+    height: 60vh;
+    box-shadow: 0 0 10px 2px gray;
+    background: rgba(53, 53, 53, 0.943);
+}
+#photos .upload-img span{
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+    background: rgb(60, 199, 0);
+}
+#photos .upload-img h2{
+    margin-top: 10%;
+}
+#photos .image-list{
+    display: flex;
+    margin: 10px;
+    flex-wrap: wrap;
+}
+#photos .image-list .imgitem{
+    width: 175px;
+    margin: 5px;
+    box-shadow: 0 0 5px 0 rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(67, 67, 67);
+    height: 175px;
+}
+#photos .image-list .imgitem img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/*------------------------videos-----------------------*/
+#videos .upload-vedio{
+    width: 80%;
+    margin: 10px;
+    padding: 10px;
+    margin-left: 130px;
+    box-shadow: 0 0 10px 2px rgb(254, 254, 1);
+    animation: colorchange 10s infinite linear;
+    background: rgba(53, 53, 53, 0.943);
+}
+#videos .vedio-list{
+    margin: 15px; 
+    display: flex;
+    flex-wrap: wrap;
+} 
+#videos .vedio-list .video{
+    width: 210px;
+    height: 210px;
+    margin: 5px;
+    box-shadow: 0 0 10px  0 wheat;
+    padding: 2px;
+    background: rgb(43, 43, 43);
+}
+#videos .vedio-list .video i{
+    color: rgb(255, 170, 0);
+    padding: 15px 18px;
+    margin-top: 90px;
+    margin-left: 80px;
+    position: absolute;
+    border-radius: 50%;
+    float: right;
+    background: rgb(240, 240, 240);
+}
+#videos .vedio-list .video video{
+    width: 100%;
+    height: 100%;
+}
+@keyframes colorchange{
+    0%{filter: hue-rotate(0deg);}
+    100%{filter: hue-rotate(369deg);}
+}
+
+/*------------------------chat--------------------------*/
+#chat-top{
+    background: linear-gradient(90deg, rgb(28, 0, 153),  rgb(0, 131, 2));
+    width: 100%;
+    height: 50px;
+    margin-top: -16px;
+    position: fixed;
+    display:flex;
+}
+#chat-top span{
+    width: 15%;
+    font-size: 18px;
+    margin: 15px 0 0 30px;
+}
+#chat-top span a{
+    padding: 8px 10px;
+    color: rgb(34, 35, 35);
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50%;
+    background: rgba(255, 208, 0, 0.948);
+}
+#chat-top span a:hover, #chat-top abbr button:hover{
+    background: linear-gradient(30deg, rgb(120, 255, 235), rgb(255, 105, 217));
+    box-shadow: 0 0 10px 1px rgb(255, 255, 255);
+}
+#chat-top h3{
+    text-align: center;
+    width: 70%;
+}
+#chat-top abbr{
+    width: 15%;
+    text-align: right;
+    margin:8px 20px;
+}
+#chat-top abbr button{
+    padding: 10px;
+    background: yellow;
+    border-radius: 50%;
+    border: 1.5px solid wheat;
+    cursor: pointer;
+}
+.chat-body{
+    background: url(assets/back.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#chats{
+    width: 100%;
+    height: 100vh;
+}
+#chats .chat-list{
+    width: 100%;
+    height: 80vh;
+}
+#chats .chat-list .chat{
+    min-height: 100%;
+    margin: 0 20%;
+    display: flex;
+    flex-direction: column;
+    padding: 1% 1% 6% 1%;
+}
+#chats .chat-list .chat p{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    line-break: anywhere;
+    width: fit-content;
+    background: #6e026c;
+}
+#chats .chat-list .chat .send{
+    align-self: flex-end;
+}
+#chats .chat-list .chat .send b{
+    color: #04ff00;
+}
+#chats .chat-list .chat .receive{
+    align-self: flex-start;
+}
+#chats .chat-list .chat .receive b{
+    color: #f7ff03;
+}
+#chats .chat-list .chat p b{
+    font-size: 18px;
+}
+#chats .upload-chat{
+    height: 12.8vh;
+    display: flex;
+    width: 100%;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    background: rgba(19, 12, 44, 0.862);
+}
+#chats .upload-chat input{
+    font-size: 18px;
+    width: 40%;
+    outline: none;
+    margin: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 20px;
+    color: antiquewhite;
+    background: rgb(47, 44, 44);
+    padding: 5px 10px;
+    border: 1.5px solid #b8b8b8;
+}
+.maincontents{
+    display: none;
+}
+#chats .upload-chat button{
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid black;
+    cursor: pointer;
+    height: 40px;
+}
+#chats .upload-chat button i{
+    font-size: 20px;
+    margin-left: -2px;
+}
+#chats .upload-chat button:hover{
+    background: linear-gradient(#ffbc4f, #57ffff);
+}
+#login{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #202020e7;
+}
+#login .auth{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    width: 300px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgb(12, 232, 12);
+    flex-direction: column;
+}
+#login .auth input{
+    border: none;
+    border-radius: 3px;
+    color: rgb(252, 197, 0);
+    outline: none;
+    background: rgb(47, 47, 47);
+    width: 98%;
+    margin: 10px 0;
+    padding: 5px;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}
+#login .auth button{
+    width: 50%;
+    font-size: 15px;
+    font-family: sans-serif;
+    border-radius: 20px;
+    padding: 5px;
+    cursor: pointer;
+    background: linear-gradient(90deg, #ffbc4f, #57ffff);
+    margin: 15px 5px;
+}
+
+/*------------------------Stories-------------------*/
+#stories h3, .youtube-contents h3{
+    color: #f7ff03;
+    margin: 10px;
+}
+.youtube-contents{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.youtube-contents h3 input{
+    font-size: 15px;
+    border: none;
+    color: aqua;
+    background: rgba(149, 149, 149, 0.383);
+    padding: 6px 10px;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 10px;
+    outline: none;
+    border-bottom: 1.5px solid black;
+    width: 200px;
+    margin: 10px;
+}
+.youtube-contents iframe{
+    width: 560px;
+    height: 315px;
+    margin: 10px;
+}
+#stories .story-list{
+    margin: 20px 10px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#stories .story-list .status{
+    background: #433b6a;
+    width: 300px;
+    margin: 5px;
+    height: 560px;
+    box-shadow: 0 0 5px 0 white;
+    display: flex;
+    flex-direction: column;
+}
+#stories .story-list .status b{
+    padding: 5px 10px;
+    width: 96%;
+}
+#stories .story-list .status b i{
+    padding: 5px 7px;
+    border-radius: 50%;
+    float: right;
+}
+#stories .story-list .status b i:hover{
+    background: #e81010;
+    color: #f7ff03;
+}
+#stories .story-list .status div{
+    margin: 0 5px;
+    height: 93%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 96%;
+}
+#stories .story-list .status video{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/*-------------------------contact-------------------------*/
+#form{
+    width: 100%;
+    height: 92.3vh;
+}
+#form, #form form, .thanks{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.thanks{
+    height: 100vh;
+}
+.thanks h1{
+    font-size: 100px;
+    margin: 0px;
+    color: #fe00b2;
+}
+.thanks a{
+    padding: 10px 30px;
+    margin: 10px;
+    border-radius: 25px;
+    border: 1.5px solid blue;
+    color: #ad02ec;
+    text-decoration: none;
+    font-weight: bold;
+}
+.thanks a:hover{
+    background: rgb(255, 255, 113);
+}
+#form form{
+    background: linear-gradient(45deg, rgb(225, 70, 13), rgb(148, 0, 188));
+    width: 35%;
+    height: fit-content;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 white;
+    padding: 10px;
+}
+#form form h2{
+    color: #f7ff03;
+}
+#form form input, #form form textarea{
+    font-size: 18px;
+    border: none;
+    color: aqua;
+    background: rgba(149, 149, 149, 0.383);
+    padding: 6px 10px;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 10px;
+    outline: none;
+    border-bottom: 1.5px solid black;
+    width: 90%;
+    margin: 10px;
+}
+#form form ::placeholder{
+    color: rgb(251, 251, 251);
+}
+#contact-body{
+    background: url("assets/digital.jpg");
+    background-attachment: fixed;background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+#form form button, .youtube-contents h3 button{
+    font-size: 18px;
+    margin: 10px;
+    color: #00fefe;
+    cursor: pointer;
+    padding: 5px 35px;
+    outline: 1px solid wheat;
+    background: linear-gradient(90deg, #ffa600, rgb(222, 0, 0));
+    border-radius: 25px;
+    border: 2px s;
+    border: none;
+}
+#form form button:hover{
+    background: linear-gradient(90deg, #d60019, #ffa600);
+}
+
+/*------------------------footer------------------------*/
+#foot footer{
+    background: black;
+    text-align: center;
+    padding: 10px;
+}
+#foot footer h1{
+    margin: 10px 0;
+}
+#foot footer .parts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#foot footer .parts div{
+    width: 400px;
+    position: relative;
+    margin: 0 5px;
+}
+#foot footer .parts div h3{
+    width: 100%;
+    padding: 5px 0;
+    border-bottom: 1.5px solid gray;
+}
+#foot footer .parts ul li{
+    list-style: none;
+    text-align: left;
+    padding: 5px;
+}
+#foot footer .parts .part2 div{
+    line-height: 1.5;
+    text-align: left;
+    margin-left: 10px;
+}
+#foot footer .parts .part3 ul{
+    display: inline-block;
+}
+#foot .copy{
+    background: rgb(25, 25, 25);
+    padding: 3px;
+    text-align: center;
+}
+#foot footer .parts .part3 abbr i{
+    margin: 5px 10px;
+    cursor: pointer;
+}
+#foot footer .parts .part3 .links{
+    display: none;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#foot footer .parts .part3 .links div{
+    margin: 0 50px;
+}
+#foot footer .parts .part3 .links img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+/*-----------------------------------------media-----------------------------*/
+@media (max-width : 1152px){
+    #container{
+        height: 100%;
+    }
+    #photos .upload-img, #videos .upload-vedio{
+        margin-left: 80px;
+    }
+    #chats .chat-list .chat{
+        margin: 0 15%;
+    }
+    #form form{
+        width: 40%;
+    }
+}
+
+@media (max-width : 880px){
+    #achivements .add-achive{
+        margin: 0 10px;
+    }
+    #top nav .menu{
+        display: none;
+        border-radius: 2px;
+        text-align: center;
+        width: 130px;   
+        background: rgb(2, 160, 2);
+    }
+    #top nav .menu li{
+        padding: 5px;
+    }
+    #top nav .menu .cancel{
+        display: block;
+        text-align: right;
+        background-color: rgb(11, 131, 0);
+    }
+    #top nav .menu li:hover{
+        background: rgb(73, 189, 1);
+    }
+    #top nav .menu-icon{
+        display: block;
+    }
+    #top nav .menu-icon:hover{
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    #photos button{
+        margin-left: 38%;
+    }
+    #photos .upload-img, #videos .upload-vedio{
+        margin-left: 50px;
+    }
+    #chats .chat-list .chat{
+        margin: 0 10%;
+    }
+    #chats .upload-chat input{
+        width: 50%;
+    }
+    #form form{
+        width: 50%;
+    }
+}
+
+@media (max-width : 500px){
+    #photos button{
+        margin-left: 32%;
+    }
+    #photos .upload-img, #videos .upload-vedio{
+        width: 100%;
+        margin-left: 0;
+    }
+    #chats .chat-list .chat{
+        margin: 0;
+    }
+    #chats .upload-chat input{
+        width: 60%;
+    }
+    #chat-top span{
+        margin: 15px 0 0 10px;
+    }
+    #chat-top abbr{
+        margin: 8px 10px;
+    }
+    #stories .story-list .status{
+        width: 100%;
+    }
+    #form form{
+        width: 80%;
+    }
+}
+
+@media(max-width : 400px){
+    #form form{
+        width: 95%;
+    }
+}

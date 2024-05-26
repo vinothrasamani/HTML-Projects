@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallary - Videos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="upload.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="shortcut icon" href="assets/logoimg.png" type="image/x-icon">
+</head>
+<body onload="listvideos();">
+    <div id="top">
+        <nav>
+            <div class="title">
+                <img src="assets/img.jpeg" alt="Friends group images">
+                <a href="index.html"><h1 class="name">Friends profiles</h1></a>
+            </div>
+            <div class="menu">
+                <li hidden class="cancel" onclick="cancel();"><i class="fa-solid fa-xmark"></i></li>
+                <a href="index.html"><li>Home</li></a>
+                <a href="achivements.html"><li>Achivemnts</li></a>
+                <a href="photos.html"><li>Photos</li></a>
+                <a href="videos.html"><li>Videos</li></a>
+                <a href="chat.html"><li>Chats</li></a>
+                <a href="stories.html"><li>Stories</li></a>
+                <a href="contact.html"><li>Contact</li></a>
+            </div>
+            <li class="menu-icon" onclick="hovermenu();"><i class="fa-solid fa-bars"></i></li>
+        </nav>
+    </div>
+    <div id="videos">
+        <h3>Vedio Gallary</h3>
+        <hr width="70%">
+        <div id="loader">
+            <div class="circle">
+                <div class="wave"></div>
+            </div>
+        </div>
+        <div class="upload-vedio">
+            <h4>Select the Vedio files to upload...</h4>
+            <input type="file" accept=".mp4, .avi, .mkv, .mov, .wmv, .webm, .mpeg" id="uploadvedio" onchange="video_upload(event);">
+        </div>
+        <div class="vedio-list">
+                        
+        </div>
+    </div>
+    <div id="foot">
+        <footer>
+            <div class="parts">
+                <div class="part1">
+                    <h3>Quick links</h3>
+                        <ul>
+                            <li><a href="achivements.html">Achivemnts</a></li>
+                            <li><a href="photos.html">Photos</a></li>
+                            <li><a href="videos.html">Videos</a></li>
+                            <li><a href="chat.html">Chats</a></li>
+                            <li><a href="stories.html">Stories</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                </div>
+                <div class="part2">
+                    <h3>Locations</h3>
+                    <div>
+                        <a href="#" target="new"><i class="fa-solid fa-location-dot" style="color: #00ffbb;font-size:20px;"></i>
+                            <b>Vinoth.A : </b><i>Mathukkarampatti, natham, Dindigul-624401.</i> </a><br>
+                        <a href="#" target="new"><i class="fa-solid fa-location-dot" style="color: #00ffbb;font-size:20px;"></i>
+                            <b>TharvinRaja.S : </b><i>Sirugudi, natham, Dindigul-624401.</i> </a><br>
+                        <a href="#" target="new"><i class="fa-solid fa-location-dot" style="color: #00ffbb;font-size:20px;"></i>
+                            <b>Saravanakumar.T : </b><i>Eriyodu, Dindigul-624401.</i></a><br>
+                        <a href="#" target="new"><i class="fa-solid fa-location-dot" style="color: #00ffbb;font-size:20px;"></i>
+                            <b>Santhosh.P.A : </b><i>Madurai</i></a>
+                    </div>
+                </div>
+                <div class="part3">
+                    <h3>Contacts</h3>
+                    <ul>
+                        <abbr title="Whatsapp">
+                            <i class="fa-brands fa-whatsapp fa-sl" onclick="setlink(`https:`+'/'+`/wa.me/qr/AEM5ZNNA32HYD1`, `https:`+`/`+`/wa.me/qr/KRJ5KY3HIAPYE1`, `https:`+`/`+`/wa.me/qr/YSDJ6Z3QEN65E1`, `https:`+`/`+`/wa.me/qr/XTZ4TVHII24XG1`, 0);" style="background:none; color: #077c05;font-size:30px;"></i></abbr>
+                        <abbr title="Facebook">
+                            <i class="fa-brands fa-facebook fa-sl" onclick="setlink(`https:`+`/`+`/www.facebook.com/profile.php?id=100094141524250&mibextid=ZbWKwL`, `https:`+`/`+`/www.facebook.com/saravnan.kumar.75?mibextid=ZbWKwL`, `https:`+`/`+`/www.facebook.com/profile.php?id=100043321031995&mibextid=ZbWKwL`, `https:`+`/`+`/www.facebook.com/profile.php?id=61551088010846&mibextid=ZbWKwL`, 1);" style="color: #0162f4; background:none;font-size:30px;"></i></abbr>
+                        <abbr title="Email">
+                            <i class="fa-regular fa-envelope fa-sl" onclick="setlink('mailto:vinothrasamani@gmail.com','mailto:tsaravanakumar252002@gmail.com','mailto:santhosh9655872281@gmail.com', 'mailto:tharvinraja96@gmail.com', 2);" style="color: #1b61da;background:none;font-size:30px;"></i></abbr>
+                        <abbr title="Linkedin">
+                            <i class="fa-brands fa-linkedin fa-sl" onclick="setlink(`https:`+`/`+`/www.linkedin.com/in/vinoth-a-629b13285`, `https:`+`/`+`/www.linkedin.com/in/saravana-kumar-571b7b29b`, `https:`+`/`+`/www.linkedin.com/in/pa-santhosh-314a6a288?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app`, `https:`+`/`+`/www.linkedin.com/in/tharvinraja-s-49a0012a0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app`, 3);" style="color: #2d68ce;font-size:30px;"></i></abbr>
+                        <abbr title="Twitter">
+                            <i class="fa-brands fa-square-twitter fa-sl" onclick="setlink(`https:`+`/`+`/twitter.com/49_vinoth_cse/`,'kumar.com','san.com', `https:`+`/`+`/x.com/tharvinraja_96?t=rO3tGi9OPa1mPIqdqvmoJA&s=08`, 4);" style="color: #2d68ce;font-size:30px;"></i></abbr>
+                        <abbr title="Instagram">
+                            <i class="fa-brands fa-square-instagram fa-sl" onclick="setlink(`https:`+`/`+`/www.instagram.com/vino_th4049?igsh=YzljYTk1ODg3Zg==`, `https:`+`/`+`/www.instagram.com/saravana_kumar.18?igsh=MXR3OW9mZ2hlZ2ln`, `https:`+`/`+`/www.instagram.com/santh.osh957?igsh=YzljYTk1ODg3Zg==`, `https:`+`/`+`/www.instagram.com/dio_str_96?igsh=YzljYTk1ODg3Zg==`, 5);" style="color: #ff00dd;font-size:30px;"></i></abbr>
+                        <abbr title="Github">
+                            <i class="fa-brands fa-github fa-sl" onclick="setlink(`https:`+`/`+`/github.com/vinothrasamani`, `https:`+`/`+`/github.com/SaravanakumarThavamani`, `https:`+`/`+`/github.com/9655872281`, `https:`+`/`+`/github.com/Tharvinraja96/`, 6);" style="color: #c3c3c3;font-size:30px;"></i></abbr>
+                    </ul>
+                    <div class="links" onmouseleave="removelink();">
+                        <div>
+                            <a href="" target="_blank"><img src="assets/vinoth.jpg" alt="Vinoth"></a>
+                            <a href="" target="_blank"><img src="assets/mass-saravana (2).jpg" alt="Saravanakumar"></a>
+                            <a href="" target="_blank"><img src="assets/san.jpeg" alt="Santhosh"></a>
+                            <a href="" target="_blank"><img src="assets/raja.jpeg" alt="TharvinRaja"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="copy">
+            <h4>SSTV&COPY;2024</h4>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var menu = document.querySelector('#top nav .menu');
+        var menubar = document.querySelector('#top nav .menu-icon');
+        var links = document.querySelector('#foot footer .parts .part3 .links');
+        var changeval = 0, k = 0;
+
+        function interval(){
+                setInterval(() => {
+                    if(window.innerWidth > 880){
+                        clearInterval(0);
+                        menu.style.display = "flex";
+                        menubar.style.display = "none";
+                        k = 1;
+                    }else{
+                        if(k == 1){
+                            k=0;
+                            cancel();
+                        }
+                    }
+                }, 500);
+            }
+        
+        function hovermenu(){
+                menu.style.display = "block";
+                menubar.style.display = "none";
+        }
+
+        function cancel(){
+                menu.style.display = "none";
+                menubar.style.display = "block";
+                interval();
+        }
+        
+        function setlink(vinoth, kumar, san, tharvin,c){
+            var colorof = new Array("#00a000","#0500a0","#940f00","#9d9d9d","#00a9cf","#b1008d","#4c4c4c");
+            links.style.display = "flex";
+            console.log(colorof[c]);
+            document.querySelector('#foot footer .parts .part3 .links div').style.boxShadow = '0px 0px 10px 5px ' + colorof[c];
+            document.querySelector('#foot footer .parts .part3 .links div a:nth-child(1)').href = vinoth;
+            document.querySelector('#foot footer .parts .part3 .links div a:nth-child(2)').href = kumar;
+            document.querySelector('#foot footer .parts .part3 .links div a:nth-child(3)').href = san;
+            document.querySelector('#foot footer .parts .part3 .links div a:nth-child(4)').href = tharvin; 
+        }
+        
+        function removelink(){
+            links.style.display = "none";
+}
+    </script> 
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
+    <script type="text/javascript">
+        const firebaseConfig = {
+            apiKey: "AIzaSyB7_yalPWoyHbBmAxkIRfBtRt0Mbc4FGU0",
+            authDomain: "friends-resume.firebaseapp.com",
+            databaseURL: "https://friends-resume-default-rtdb.firebaseio.com",
+            projectId: "friends-resume",
+            storageBucket: "friends-resume.appspot.com",
+            messagingSenderId: "922315528130",
+            appId: "1:922315528130:web:2b65e1b4c531e842ab685b"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        var loadofvideo = document.querySelector('#loader');
+        var listvideoof = document.querySelector('#videos .vedio-list');
+        var video_item, video_name, count2;
+        var username;
+        const auth = firebase.auth();
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                username = user.email;
+                console.log(user.email.split("@")[0]);
+            } else {
+                window.location.href = 'chat.html';
+            }
+        });
+        
+        function video_upload(e){
+            video_item = e.target.files[0];
+            img_name = video_item.name;
+            let storageref = firebase.storage().ref("videos/" + video_item);
+            let video_uploadtask = storageref.put(video_item);
+
+            video_uploadtask.on("state_changed", (snapshot) => {
+                console.log(snapshot);
+                loadofvideo.style.display = "block";
+                count2 = Math.floor((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+                if (count2 === 100) {
+                    loadofvideo.style.display = "none";
+                }
+            }, (error) => {
+                console.log("Error: " + error);
+                loadofvideo.style.display = "none";
+            }, () => {
+                video_uploadtask.snapshot.ref.getDownloadURL().then((url) => {
+                    console.log("URL: " + url);
+                    listvideos();
+                }).catch((error) => {
+                    console.error("Error getting download URL:", error);
+                });
+            });
+        }
+
+        function listvideos(){
+            loadofvideo.style.display = "block";
+            var storageRef = firebase.storage().ref("videos/"); // Adjust the directory path as needed
+
+            storageRef.listAll().then((result) => {
+                let promises = [];
+                result.items.forEach((itemRef) => {
+                    promises.push(itemRef.getDownloadURL());
+                });
+
+                return Promise.all(promises);
+            }).then((urls) => {
+                urls.forEach((url) => {
+                    var videolink = document.createElement('a');
+                    videolink.href = url;
+                    videolink.target = '_blank';
+                    var videodiv = document.createElement('div');
+                    videodiv.classList.add('video');
+                    var timecount = document.createElement('i');
+                    timecount.classList.add('fa-solid');
+                    timecount.classList.add('fa-play');
+                    var videosrc = document.createElement('video');
+                    videosrc.src = url;
+                    videodiv.appendChild(timecount);
+                    videodiv.appendChild(videosrc);
+                    videolink.appendChild(videodiv);
+                    listvideoof.appendChild(videolink);
+                });
+                loadofvideo.style.display = "none";
+            }).catch((error) => {
+                console.error("Error listing files: ", error);
+                loadofvideo.style.display = "none";
+            });
+        }
+    </script>   
+</body>
+</html>

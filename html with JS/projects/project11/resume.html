@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="resume.css">
+    <link rel="shortcut icon" href="assets/logoimg.png" type="image/x-icon">
+</head>
+<body>
+    <a href="index.html" class="back">Back</a>
+    <div id="theme" onclick="theme();">
+        <abbr title="Click to change the theme of Resume..">
+            <i id="tag"></i><div class="inner" id="inner"></div>
+        </abbr>
+    </div><br><br><br>
+    <div id="resume">
+        <div id="leftside">
+            <center>
+            <img src="assets/my-profile.jpg" alt="Profile"><br>
+            <h2 class="name">VINOTH.A</h2>
+            <hr style="border-bottom: 1px solid rgb(68, 0, 168);width:80%;margin-bottom:20px;">
+            <h3>About</h3>
+            <p class="para-1">Hello.. Myself vinoth.A., Student at NPR College of Engineering and Technology. I  Pursuing
+                graduation in computer science and I'm interested in the field of developing new products using programs.
+            </p>
+            <h3>Contact</h3>
+            <ul class="para-2">
+                <li> <i class="fa-regular fa-envelope fa-sl" style="color: #000;background:none;padding-right: 5px;"></i><a href="mailto:vinothrasamani@gmail.com" id="links">vinothrasamani@gmail.com</a></li>
+                <li> <i class="fa-solid fa-phone" style="color: #000; background: none; padding-right: 7px;"></i>+91-6383161574</li>
+                <li><i class="fa-brands fa-facebook fa-sl" style="color: #000; background:none;padding-right: 5px;"></i><a href="https://www.facebook.com/profile.php?id=100094141524250&mibextid=ZbWKwL" id="links">Facebook</a></li>
+                <li><i class="fa-brands fa-linkedin fa-sl" style="color: #000; background: none;padding-right: 5px;"></i><a href="https://www.linkedin.com/in/vinoth-a-629b13285" id="links">Linkedin</a></li>
+                <li><i class="fa-brands fa-square-twitter fa-sl" style="color: #000; background: none;padding-right: 5px;"></i><a href="https://twitter.com/49_vinoth_cse/" id="links">Twitter</a></li>
+                <li> <i class="fa-solid fa-location-dot" style="color: #000; background: none; padding-right: 7px;"></i>Madhukkarampatti, Natham, <br>Dindigul-624401.</li>
+            </ul>
+            <h3>Language</h3>
+            <ul class="para-3">
+                <li>Tamil</li>
+                <li>English</li>
+            </ul>
+            <h3>Skills</h3>
+            <ul class="para-4">
+                <li>Technical Skills</li>
+                <ul>
+                    <li>C Programming</li>
+                    <li>C# (C-Sharp)</li>
+                    <li>Java</li>
+                    <li>HTML, CSS</li>
+                    <li>SQL</li>
+                    <li>Jquiry</li>
+                    <li>Javascript Basics</li>
+                </ul>
+                <li>Soft Skills</li>
+                <ul>
+                    <li>Leadership</li>
+                    <li>Problem Solving</li>
+                </ul>
+            </ul>
+            </center>
+        </div>
+        <div id="rightside"><br>
+            <h3 class="fir">Projects Done</h3>
+            <h4>(1) Online Smart Voting System using three way authentication with cloud(2024)</h4>
+            <p>It is an android application project. This system is helps to
+                vote online. Additionally it provides three ways of authentications.
+            </p>
+            <h4>(2) Library Management with SMS Alert System (2023)</h4>
+            <p>It is an android application project. This system is helps to
+                manage user's details and books details. Additionally it
+                provides an SMS to the users who didn't return the book(s).
+            </p>
+            <h4>(3) Pro Writing Companion: Elevating Your
+                Writing Skill with Our Application (2023)
+                </h4>
+            <p>It is the web development project. This application is
+                perform spell checking, grammar checking and
+                summarization functionalities.
+                
+            </p>
+            <h4>(4) Attendance Management System
+                (2022)                
+                </h4>
+            <p>It is the web development project using PHP and Mysql.
+                This system is used to update the student attendance and
+                share a academic schedules as a notice.  
+            </p><br>
+            <h3>Education</h3>
+            <h4>NPR College of Engineering and Technology</h4>
+            <p>Bachelor of Engineering - Computer Science
+                Natham, Dindigul.
+                (2020-2024)</p>
+            <h4>DKG Model Higher Secondary School(12th)</h4>
+            <p>Natham, Dindigul.
+                (2019-2020)</p>
+            <h4>RC Sirumalar Higher Secondary School(10th)</h4>
+            <p>Natham, Dindigul.
+                (2017-2018)
+                </p>
+            <br>
+            <h3>Internship</h3>
+            <p>I was done my app development internship in Fantasy
+                Solution, Trichy.
+                </p><br>
+            <h3>Extracurricular Activity</h3>
+            <li>I attend webinar on "IEEE Xplore".</li>
+            <li>I attend webinar on the topic of "Future of
+                Technology Entrepreneurship in India".</li>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var touch = document.getElementById('theme');
+        var bar = document.getElementById('inner');
+        var back = document.getElementById('resume');
+        var left = document.getElementById('leftside');
+        function theme(){
+           if(touch==true){
+            bar.style.backgroundColor="#228100";
+            bar.style.float="right";
+            back.style.backgroundColor="#353535";
+            back.style.color="white";
+            left.style.backgroundColor="#123a96";
+            touch = false;
+           }
+           else{
+            bar.style.backgroundColor="#0008ff";
+            bar.style.float="left";
+            back.style.backgroundColor="white";
+            back.style.color="black";
+            left.style.backgroundColor="#2599d7";
+            touch = true;
+           }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+        body{
+            margin: 0%;
+            padding: 0%;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        #theme{
+            float: right;
+            margin: 20px;
+            cursor: pointer;
+            width: 40px;
+            height: 20px;
+            border: 2px solid #6e6e6e;
+            border-radius: 30px;
+            background-color: rgb(205, 205, 205);
+        }
+        #theme .inner{
+            width: 20px;
+            border-radius: 50%;
+            height: 20px;
+            background-color: #0011ab;
+        }
+        #tag{
+            font-size: 10px;
+        }
+        #resume{
+            margin: 30px 10px;
+            padding: 0px;
+            width: auto;
+            text-align: justify;
+            overflow: hidden;
+            height: 100%;
+            font-size: 100%;
+            border: 1px solid rgb(220, 219, 219);
+            box-shadow: 2px 2px 10px 3px rgb(164, 164, 164);
+        }
+        .back{
+            display: block;
+            padding: 5px 10px;
+            margin: 20px;
+            text-decoration: none;
+            color: #068602;
+            font-size: 20px;
+            float: left;
+            border: 2px  solid #09ff00;
+        }
+        .back:hover{
+            animation: border 6s linear infinite;
+            border-radius: 5px;
+        }
+        #resume #leftside{
+            margin: 0;
+            padding: 10px;
+            margin-right: 10px;
+            float: left;
+            line-height: 1.5;
+            width: 35%;
+            height: 100%;
+            background-color: #2599d7;
+        }
+        #resume #leftside img{
+            width: 42%;
+            height: 42%;
+            border-radius: 50%;
+            border: 1.5px solid gray;
+        }
+        #resume #leftside h3{
+            margin: 1.5% 10%;
+            font-size: 1.5vw;
+            border-radius: 50px;
+            border: 2px solid #ff0000;
+            animation: border 3s linear infinite;
+        }
+        #resume #leftside ul li{
+            font-size: 1.5vw;
+        }
+        #resume #leftside .para-1{
+            margin: 1.4vw;
+            font-size: 1.5vw;
+            text-align: justify;
+            margin-bottom: 25px;
+        }
+        #resume #leftside .para-2{
+            list-style: none;
+            font-size: 1.5vw;
+            text-align: left;
+        }
+        #resume #leftside .para-3,
+        #resume #leftside .para-4{
+            text-align: left;
+            font-size: 20px;
+            margin-left: 15px;
+        }
+        #resume #leftside .para-2 a{
+            text-decoration: none;
+            color: #00095e;
+        }
+        #leftside .name{
+            font-size: 1.7vw;
+        }
+        #resume #rightside{
+            margin-left: 38%;
+            margin-right: 100px;
+            line-height: 1.4;
+            font-size: 1.5vw;
+        }
+        #resume #rightside h3{
+            width: 250px;
+            text-align: center;
+            padding: 5px;
+            font-size: 1.5vw;
+            border-radius: 50px;
+            margin-top: -25px;
+            background: #ff0000;
+            animation: border 3s linear infinite;
+        }
+        #resume #rightside .fir{
+            margin-top: 0;
+        }
+        #resume #rightside h4{
+            margin-bottom: -15px;
+        }
+        @keyframes border{
+            0%{filter: hue-rotate(0deg);}
+            100%{filter: hue-rotate(360deg);}
+        }
+        @media (max-width : 1000px){
+            #resume #rightside h3{
+                width: 200px;
+                margin-top: -20px;
+                overflow: hidden;
+            }
+            #resume #rightside{
+                margin-right: 50px;
+            }
+            #resume #rightside h4{
+                margin-bottom: 0px;
+            }
+            #resume #leftside .para-1, #resume #leftside .para-2,#leftside .name, #resume #leftside h3,
+            #resume #leftside .para-3,#resume #rightside h3,#resume #leftside ul li,
+            #resume #leftside .para-4,#resume #rightside h4,#resume #rightside p,#resume #rightside li{
+                font-size: 1.5vw;
+            }
+        }
+        @media (max-width : 700px){
+            #resume #rightside h3{
+                width: 170px;
+                margin-top: -10px;
+                overflow: hidden;
+            }
+            #resume #rightside{
+                margin-right: 30px;
+            }
+            #resume #rightside h4{
+                margin: -4px 0;
+            }
+            #resume #leftside ul li{
+                font-size: 1.8vw;
+            }
+            #resume #leftside .para-1, #resume #leftside .para-2,#leftside .name, #resume #leftside h3,
+            #resume #leftside .para-3,#resume #rightside h3,#resume #leftside ul li,
+            #resume #leftside .para-4,#resume #rightside h4,#resume #rightside p,#resume #rightside li{
+                font-size: 1.8vw;
+            }
+        }
+        @media (max-width : 500px){
+            #theme{
+                width: 30px;
+                height: 16px;
+            }
+            #theme .inner{
+                width: 16px;
+                height: 16px;
+            }
+            .back{
+                padding: 2px 5px;
+                font-size: 12px;
+            }
+            #resume #rightside h4{
+                margin: -6px 0;
+            }
+            #resume #leftside .para-1, #resume #leftside .para-2,#leftside .name, #resume #leftside h3,
+            #resume #leftside .para-3,#resume #rightside h3,#resume #leftside ul li,
+            #resume #leftside .para-4,#resume #rightside h4,#resume #rightside p,#resume #rightside li{
+                font-size: 2.2vw;
+            }
+            #resume #leftside .para-2{
+                margin-left: -35px;
+            }
+            #resume #leftside .para-3,
+            #resume #leftside .para-4,
+            #resume #leftside .para-3 ul,
+            #resume #leftside .para-4 ul{
+                margin-left: -25px;
+
+            }
+            #resume #rightside h3{
+                width: 150px;
+                margin-top: -5px;
+                overflow: hidden;
+            }
+            #resume #rightside{
+                margin-left: 42%;
+                margin-right: 10px;
+            }
+            #resume #leftside img{
+                width: 60%;
+                height: 60%;
+            }
+        }

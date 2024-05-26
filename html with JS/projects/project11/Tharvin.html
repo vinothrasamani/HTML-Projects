@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="resume.css">
+    <link rel="shortcut icon" href="assets/logoimg.png" type="image/x-icon">
+</head>
+<body>
+    <a href="index.html" class="back">Back</a>
+    <div id="theme" onclick="theme();">
+        <abbr title="Click to change the theme of Resume..">
+            <i id="tag"></i><div class="inner" id="inner"></div>
+        </abbr>
+    </div><br><br><br>
+    <div id="resume">
+        <div id="leftside">
+            <center>
+            <img src="assets/raja.jpeg" alt="Profile"><br>
+            <h2 class="name">TharvinRaja.S</h2>
+            <hr style="border-bottom: 1px solid rgb(68, 0, 168);width:80%;margin-bottom:20px;">
+            <h3>About</h3>
+            <p class="para-1">Hello.. Myself TharvinRaja.S, Student at NPR College of Engineering and Technology. I  Pursuing
+                graduation in computer science and I'm interested in the field of Testing...
+            </p>
+            <h3>Contact</h3>
+            <ul class="para-2">
+                <li> <i class="fa-regular fa-envelope fa-sl" style="color: #000;background:none;padding-right: 5px;"></i><a href="mailto:tharvinraja96@gmail.com" id="links">vinothrasamani@gmail.com</a></li>
+                <li> <i class="fa-solid fa-phone" style="color: #000; background: none; padding-right: 7px;"></i>+91-6383161574</li>
+                <li><i class="fa-brands fa-facebook fa-sl" style="color: #000; background:none;padding-right: 5px;"></i><a href="https://www.facebook.com/profile.php?id=61551088010846&mibextid=ZbWKwL" id="links">Facebook</a></li>
+                <li><i class="fa-brands fa-linkedin fa-sl" style="color: #000; background: none;padding-right: 5px;"></i><a href="https://www.linkedin.com/in/tharvinraja-s-49a0012a0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" id="links">Linkedin</a></li>
+                <li><i class="fa-brands fa-square-twitter fa-sl" style="color: #000; background: none;padding-right: 5px;"></i><a href="https://x.com/tharvinraja_96?t=rO3tGi9OPa1mPIqdqvmoJA&s=08" id="links">Twitter</a></li>
+                <li> <i class="fa-solid fa-location-dot" style="color: #000; background: none; padding-right: 7px;"></i>7/191, East Street,
+                    Sirugudi, Natham,
+                    DindigulL-624402</li>
+            </ul>
+            <h3>Language</h3>
+            <ul class="para-3">
+                <li>Tamil</li>
+                <li>English</li>
+            </ul>
+            <h3>Skills</h3>
+            <ul class="para-4">
+                <li>Technical Skills</li>
+                <ul>
+                    <li>C Programming</li>
+                    <li>HTML, CSS</li>
+                    <li>SQL</li>
+                    <li>Testing Basics</li>
+                </ul>
+                <li>Soft Skills</li>
+                <ul>
+                    <li>Leadership</li>
+                    <li>Problem Solving</li>
+                </ul>
+            </ul>
+            </center>
+        </div>
+        <div id="rightside"><br>
+            <h3 class="fir">Projects Done</h3>
+            <h4>(1) Online Smart Voting System using three way authentication with cloud(2024)</h4>
+            <p>It is an android application project. This system is helps to
+                vote online. Additionally it provides three ways of authentications.
+            </p>
+            <h4>(2) Android IP Viewer(2023)</h4>
+            <p>Android IP Viewer project is an android application project. develop using
+                kolin language app is only supported for android mobile and use platform
+                for Android studio backend languages for XML.
+                This application only supports in android mobiles.                
+            </p>
+            <h4>(3) Pro Writing Companion: Elevating Your
+                Writing Skill with Our Application (2023)
+                </h4>
+            <p>It is the web development project. This application is
+                perform spell checking, grammar checking and
+                summarization functionalities.
+            </p><br>
+            <h3>Education</h3>
+            <h4>NPR College of Engineering and Technology</h4>
+            <p>Bachelor of Engineering - Computer Science
+                Natham, Dindigul.
+                (2020-2024)</p>
+            <h4>Ramsuns Matric Hr Sec School(12th)</h4>
+            <p>Meyyampatti ,Natham, Dindigul
+                (2019-2020)</p>
+            <h4>Ramsuns Matric Hr Sec School(12th)</h4>
+            <p>Meyyampatti ,Natham, Dindigul
+                (2017-2018)
+                </p>
+            <br>
+            <h3>Internship</h3>
+            <p>I have Complete the 5-day
+                online internship on Basic
+                Ethical Hacking in Fantasy
+                Solution, Trichy.
+                </p><br>
+            <h3>Extracurricular Activity</h3>
+            <li>I attend webinar on "IEEE Xplore".</li>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var touch = document.getElementById('theme');
+        var bar = document.getElementById('inner');
+        var back = document.getElementById('resume');
+        var left = document.getElementById('leftside');
+        function theme(){
+           if(touch==true){
+            bar.style.backgroundColor="#228100";
+            bar.style.float="right";
+            back.style.backgroundColor="#353535";
+            back.style.color="white";
+            left.style.backgroundColor="#123a96";
+            touch = false;
+           }
+           else{
+            bar.style.backgroundColor="#0008ff";
+            bar.style.float="left";
+            back.style.backgroundColor="white";
+            back.style.color="black";
+            left.style.backgroundColor="#2599d7";
+            touch = true;
+           }
+        }
+    </script>
+</body>
+</html>

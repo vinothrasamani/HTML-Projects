@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinoth.A, Saravanakumar.T, Santhosh.P.A and TharvinRaja.S - Friends Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="shortcut icon" href="assets/logoimg.png" type="image/x-icon">
+</head>
+<body>
+    <div id="top">
+        <nav>
+            <div class="title">
+                <img src="assets/img.jpeg" alt="Friends group images" onclick="common('../assets/img.jpeg');">
+                <a href="index.html"><h1 class="name">Friends profiles</h1></a>
+            </div>
+            <div class="menu">
+                <li hidden class="cancel" onclick="cancel();"><i class="fa-solid fa-xmark"></i></li>
+                <a href="index.html"><li>Home</li></a>
+                <a href="achivements.html"><li>Achivemnts</li></a>
+                <a href="photos.html"><li>Photos</li></a>
+                <a href="videos.html"><li>Videos</li></a>
+                <a href="chat.html"><li>Chats</li></a>
+                <a href="stories.html"><li>Stories</li></a>
+                <a href="contact.html"><li>Contact</li></a>
+                <li><i class="fa-solid fa-cloud-moon" id="theme" style="color: #bababa;font-size:20px;"></i><sub>1</sub></li>
+            </div>
+            <li class="menu-icon" onclick="hovermenu();"><i class="fa-solid fa-bars"></i></li>
+        </nav>
+    </div>
+    <div id="container">
+        <div class="card1 flip" onmouseover="selected(1);" onmouseleave="unselect();">
+            <div class="front">
+                <img src="assets/vinoth.jpg" alt="Image of Vinoth" onclick="common('../assets/vinoth.jpg');">
+                <h3>Vinoth.A</h3>
+                <h4>Software Developer</h4>
+                <p>Hover this card to get more details about me and also get Resum...</p>
+            </div>
+            <div class="back">
+                <h3>About me</h3>
+                <p>Hello there.. I am Vinoth.A, I'm a Software Developer. I'm interested to create a new products and work width
+                    new projects. Also two mobile applications and some web applications are developed by me!
+                </p>
+                <br>
+                <b>E-Mail : </b><a href="mailto:vinothrasamani@gmail.com"><i>vinothrasamani@gmail.com</i></a><br>
+                <br><b>Resume : </b><a href="resume.html"><i>Vinoth Bio</i></a>
+            </div>
+        </div>
+        <div class="card2 flip" onmouseover="selected(2);" onmouseleave="unselect();">
+            <div class="front">
+                <img src="assets/mass-saravana (2).jpg" alt="Image of Saravanakumar" onclick="common('../assets/mass-saravana.jpg');">
+                <h3>Saravanakumar.T</h3>
+                <h4>Digital Marketing</h4>
+                <p>Hover this card to get more details about me and also get Resum...</p>
+            </div>
+            <div class="back">
+                <h3>About me</h3>
+                <p>Hello there.. I am a Software Developer. I'm interested to create a new products and work width
+                    new projects. Also two mobile applications and some web applications are developed by me!
+                </p>
+                <br>
+                <b>E-Mail : </b><a href="mailto:tsaravanakumar252002@gmail.com"><i>tsaravanakumar252002@gmail.com</i></a><br>
+                <br><b>Resume : </b><a href="kumar.html"><i>Saravanakumar Bio</i></a>
+            </div>
+        </div>
+        <div class="card3 flip" onmouseover="selected(3);" onmouseleave="unselect();">
+            <div class="front">
+                <img src="assets/san.jpeg" alt="Image of Santhosh" onclick="common('../assets/san.jpeg');">
+                <h3>Santhosh.P.A</h3>
+                <h4>Financial</h4>
+                <p>Hover this card to get more details about me and also get Resum...</p>
+            </div>
+            <div class="back">
+                <h3>About me</h3>
+                <p>Hello there.. I am a Software Developer. I'm interested to create a new products and work width
+                    new projects. Also two mobile applications and some web applications are developed by me!
+                </p><br>
+                <b>E-Mail : </b><a href="mailto:santhosh9655872281@gmail.com"><i>santhosh9655872281@gmail.com</i></a><br>
+                <br><b>Resume : </b><a href="santhosh.html"><i>Santhosh Bio</i></a>
+            </div>
+        </div>
+        <div class="card4 flip" onmouseover="selected(4);" onmouseleave="unselect();">
+            <div class="front">
+                <img src="assets/raja.jpeg" alt="Image of TharvinRaja" onclick="common('../assets/raja.jpeg');">
+                <h3>TharvinRaja.S</h3>
+                <h4>Web Developer</h4>
+                <p>Hover this card to get more details about me and also get Resum...</p>
+            </div>
+            <div class="back">
+                <h3>About me</h3>
+                <p>Hello there.. I am a Software Developer. I'm interested to create a new products and work width
+                    new projects. Also two mobile applications and some web applications are developed by me!
+                </p><br>
+                <b>E-Mail : </b><a href="mailto:tharvinraja96@gmail.com"><i>tharvinraja96@gmail.com</i></a><br>
+                <br><b>Resume : </b><a href="Tharvin.html"><i>TharvinRaja Bio</i></a>
+            </div>
+        </div> 
+        <div class="common">
+        </div>
+    </div>
+    <div id="foot">
+        <footer>
+            <div class="parts">
+                <div class="part1">
+                    <h3>Quick links</h3>
+                        <ul>
+                            <li><a href="achivements.html">Achivemnts</a></li>
+                            <li><a href="photos.html">Photos</a></li>
+                            <li><a href="videos.html">Videos</a></li>
+                            <li><a href="chat.html">Chats</a></li>
+                            <li><a href="stories.html">Stories</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                </div>
+                <div class="part2">
+                    <h3>Locations</h3>
+                    <div>
+                        <a href="#" target="new"><i class="fa-solid fa-location-dot" style="color: #00ffbb;font-size:20px;"></i>
+                            <b>Vinoth.A : </b><i>Mathukkarampatti, natham, Dindigul-624401.</i> </a><br>
+                        <a href="#" target="new"><i class="fa-solid fa-location-dot" style="color: #00ffbb;font-size:20px;"></i>
+                            <b>TharvinRaja.S : </b><i>Sirugudi, natham, Dindigul-624401.</i> </a><br>
+                        <a href="#" target="new"><i class="fa-solid fa-location-dot" style="color: #00ffbb;font-size:20px;"></i>
+                            <b>Saravanakumar.T : </b><i>Eriyodu, Dindigul-624401.</i></a><br>
+                        <a href="#" target="new"><i class="fa-solid fa-location-dot" style="color: #00ffbb;font-size:20px;"></i>
+                            <b>Santhosh.P.A : </b><i>Madurai</i></a>
+                    </div>
+                </div>
+                <div class="part3">
+                    <h3>Contacts</h3>
+                    <ul>
+                        <abbr title="Whatsapp">
+                            <i class="fa-brands fa-whatsapp fa-sl" onclick="setlink(`https:`+'/'+`/wa.me/qr/AEM5ZNNA32HYD1`, `https:`+`/`+`/wa.me/qr/KRJ5KY3HIAPYE1`, `https:`+`/`+`/wa.me/qr/YSDJ6Z3QEN65E1`, `https:`+`/`+`/wa.me/qr/XTZ4TVHII24XG1`, 0);" style="background:none; color: #077c05;font-size:30px;"></i></abbr>
+                        <abbr title="Facebook">
+                            <i class="fa-brands fa-facebook fa-sl" onclick="setlink(`https:`+`/`+`/www.facebook.com/profile.php?id=100094141524250&mibextid=ZbWKwL`, `https:`+`/`+`/www.facebook.com/saravnan.kumar.75?mibextid=ZbWKwL`, `https:`+`/`+`/www.facebook.com/profile.php?id=100043321031995&mibextid=ZbWKwL`, `https:`+`/`+`/www.facebook.com/profile.php?id=61551088010846&mibextid=ZbWKwL`, 1);" style="color: #0162f4; background:none;font-size:30px;"></i></abbr>
+                        <abbr title="Email">
+                            <i class="fa-regular fa-envelope fa-sl" onclick="setlink('mailto:vinothrasamani@gmail.com','mailto:tsaravanakumar252002@gmail.com','mailto:santhosh9655872281@gmail.com', 'mailto:tharvinraja96@gmail.com', 2);" style="color: #1b61da;background:none;font-size:30px;"></i></abbr>
+                        <abbr title="Linkedin">
+                            <i class="fa-brands fa-linkedin fa-sl" onclick="setlink(`https:`+`/`+`/www.linkedin.com/in/vinoth-a-629b13285`, `https:`+`/`+`/www.linkedin.com/in/saravana-kumar-571b7b29b`, `https:`+`/`+`/www.linkedin.com/in/pa-santhosh-314a6a288?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app`, `https:`+`/`+`/www.linkedin.com/in/tharvinraja-s-49a0012a0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app`, 3);" style="color: #2d68ce;font-size:30px;"></i></abbr>
+                        <abbr title="Twitter">
+                            <i class="fa-brands fa-square-twitter fa-sl" onclick="setlink(`https:`+`/`+`/twitter.com/49_vinoth_cse/`,'kumar.com','san.com', `https:`+`/`+`/x.com/tharvinraja_96?t=rO3tGi9OPa1mPIqdqvmoJA&s=08`, 4);" style="color: #2d68ce;font-size:30px;"></i></abbr>
+                        <abbr title="Instagram">
+                            <i class="fa-brands fa-square-instagram fa-sl" onclick="setlink(`https:`+`/`+`/www.instagram.com/vino_th4049?igsh=YzljYTk1ODg3Zg==`, `https:`+`/`+`/www.instagram.com/saravana_kumar.18?igsh=MXR3OW9mZ2hlZ2ln`, `https:`+`/`+`/www.instagram.com/santh.osh957?igsh=YzljYTk1ODg3Zg==`, `https:`+`/`+`/www.instagram.com/dio_str_96?igsh=YzljYTk1ODg3Zg==`, 5);" style="color: #ff00dd;font-size:30px;"></i></abbr>
+                        <abbr title="Github">
+                            <i class="fa-brands fa-github fa-sl" onclick="setlink(`https:`+`/`+`/github.com/vinothrasamani`, `https:`+`/`+`/github.com/SaravanakumarThavamani`, `https:`+`/`+`/github.com/9655872281`, `https:`+`/`+`/github.com/Tharvinraja96/`, 6);" style="color: #c3c3c3;font-size:30px;"></i></abbr>
+                    </ul>
+                    <div class="links" onmouseleave="removelink();">
+                        <div>
+                            <a href="" target="_blank"><img src="assets/vinoth.jpg" alt="Vinoth"></a>
+                            <a href="" target="_blank"><img src="assets/mass-saravana (2).jpg" alt="Saravanakumar"></a>
+                            <a href="" target="_blank"><img src="assets/san.jpeg" alt="Santhosh"></a>
+                            <a href="" target="_blank"><img src="assets/raja.jpeg" alt="TharvinRaja"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="copy">
+            <h4>SSTV&COPY;2024</h4>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var profile = document.querySelector('#top .title img');
+        var profilename = document.querySelector('#top .title .name');
+        var body = document.querySelector('body');
+        var commondiv = document.querySelector('.common');
+        var count = document.querySelector('#top nav .menu li sub');
+        var theme = document.querySelector('#top nav .menu #theme');
+        var menu = document.querySelector('#top nav .menu');
+        var menubar = document.querySelector('#top nav .menu-icon');
+        var links = document.querySelector('#foot footer .parts .part3 .links');
+
+        var themecount = 1, changeval = 0, k = 0;
+        theme.style.cursor = "pointer";
+
+        function interval(){
+                setInterval(() => {
+                    if(window.innerWidth > 880){
+                        clearInterval(0);
+                        menu.style.display = "flex";
+                        menubar.style.display = "none";
+                        k = 1;
+                    }else{
+                        if(k == 1){
+                            k=0;
+                            cancel();
+                        }
+                    }
+                }, 500);
+            }
+
+        function hovermenu(){
+                menu.style.display = "block";
+                menubar.style.display = "none";
+        }
+
+        function cancel(){
+                menu.style.display = "none";
+                menubar.style.display = "block";
+                interval();
+        }
+
+        theme.onclick = function(){
+            themecount++;
+            if(themecount > 11){
+                changeval+=1;
+                themecount = themecount - 11;
+                if(changeval == 2){
+                    body.style.background = 'rgb(31, 31, 31)';
+                    theme.classList.remove('fa-sun');
+                    theme.classList.add('fa-cloud-moon');
+                    changeval = 0;
+                }
+                else{
+                    body.style.background = '#a8a8a8';
+                    theme.classList.remove('fa-moon');
+                    theme.classList.add('fa-cloud-sun');
+                }
+            }
+            
+            count.innerHTML = themecount;
+            if(themecount == 1){
+                var k = 1;
+                while(k <= 4){
+                    document.querySelector(`#container .card`+k+` .front`).style.background = `linear-gradient(rgb(26, 0, 128), rgb(178, 0, 205))`;
+                    document.querySelector(`#container .card`+k+` .back`).style.background = `linear-gradient(rgb(192, 47, 160), rgb(213, 121, 0))`;
+                    k++;
+                }
+            }
+            if(themecount == 2){
+                var k = 1;
+                while(k <= 4){
+                    document.querySelector(`#container .card`+k+` .front`).style.background = `linear-gradient(#80001a, #950054)`;
+                    document.querySelector(`#container .card`+k+` .back`).style.background = `linear-gradient(#116300, #01888d)`;
+                    k++;
+                }
+            }
+            else if(themecount == 3){
+                var k = 1;
+                while(k <= 4){
+                    document.querySelector(`#container .card`+k+` .front`).style.background = `linear-gradient(#5d6400, #a64000)`;
+                    document.querySelector(`#container .card`+k+` .back`).style.background = `linear-gradient(#320064, #011c80)`;
+                    k++;
+                }
+            }
+            else if(themecount == 4){
+                var k = 1;
+                while(k <= 4){
+                    document.querySelector(`#container .card`+k+` .front`).style.background = `linear-gradient(#494949, #1a1a1a)`;
+                    document.querySelector(`#container .card`+k+` .back`).style.background = `linear-gradient(#913f3f, #39542d)`;
+                    k++;
+                }
+            }
+            else if(themecount == 5){
+                var k = 1;
+                while(k <= 4){
+                    document.querySelector(`#container .card`+k+` .front`).style.background = `linear-gradient(#900c45, #57025b)`;
+                    document.querySelector(`#container .card`+k+` .back`).style.background = `linear-gradient(#b35a00, #fd0000)`;
+                    k++;
+                }
+            }
+            else if(themecount == 6){
+                if(changeval == 1){
+                    theme.classList.remove('fa-cloud-sun');
+                    theme.classList.add('fa-sun');
+                }
+                else{
+                    theme.classList.remove('fa-cloud-moon');
+                    theme.classList.add('fa-moon');
+                }
+                var k = 1;
+                while(k <= 4){
+                    document.querySelector(`#container .card`+k+` .front`).style.background = `#00005b`;
+                    document.querySelector(`#container .card`+k+` .back`).style.background = `#43005b`;
+                    k++;
+                }
+            }
+            else if(themecount == 7){
+                var k = 1;
+                while(k <= 4){
+                    document.querySelector(`#container .card`+k+` .front`).style.background = `#5b003e`;
+                    document.querySelector(`#container .card`+k+` .back`).style.background = `#5f9101`;
+                    k++;
+                }
+            }
+            else if(themecount == 8){
+                var k = 1;
+                while(k <= 4){
+                    document.querySelector(`#container .card`+k+` .front`).style.background = `#016f91`;
+                    document.querySelector(`#container .card`+k+` .back`).style.background = `#019142`;
+                    k++;
+                }
+            }
+            else if(themecount == 9){
+                var k = 1;
+                while(k <= 4){
+                    document.querySelector(`#container .card`+k+` .front`).style.background = `#554922`;
+                    document.querySelector(`#container .card`+k+` .back`).style.background = `#552222`;
+                    k++;
+                }
+            }
+            else if(themecount == 10){
+                var k = 1;
+                while(k <= 4){
+                    document.querySelector(`#container .card`+k+` .front`).style.background = `#f804ab`;
+                    document.querySelector(`#container .card`+k+` .back`).style.background = `#b63a86`;
+                    k++;
+                }
+            }
+            else if(themecount == 11){
+                var k = 1;
+                while(k <= 4){
+                    document.querySelector(`#container .card`+k+` .front`).style.background = `linear-gradient(#000000b0, #1c1c1cbf),url(https://c4.wallpaperflare.com/wallpaper/297/22/531/lake-blue-moonlight-moon-wallpaper-preview.jpg)`;
+                    document.querySelector(`#container .card`+k+` .front`).style.backgroundPosition = "right";
+                    document.querySelector(`#container .card`+k+` .front`).style.backgroundSize = "cover";
+                    document.querySelector(`#container .card`+k+` .back`).style.background = `linear-gradient(#045416bd, #2c5404bd),url(https://images.hdqwalls.com/wallpapers/best-nature-image.jpg)`;
+                    document.querySelector(`#container .card`+k+` .back`).style.backgroundPosition = "center";
+                    document.querySelector(`#container .card`+k+` .back`).style.backgroundSize = "cover";
+                    k++;
+                }
+            }
+        }
+
+        function common(i){
+            commondiv.style.display = "flex";
+            var link = document.createElement('img');
+            link.style.borderRadius = "50%";
+            link.style.width = "500px";
+            link.src = i;
+            commondiv.appendChild(link);
+            commondiv.ondblclick = function(){
+                commondiv.style.display = "none";
+                commondiv.removeChild(link);
+            }
+        }
+
+        function selected(i){
+            if(i == 1){profilename.innerHTML = "Vinoth.A"}
+            else if(i == 2){profilename.innerHTML = "Saravanakumar.T"}
+            else if(i == 3){profilename.innerHTML = "Santhosh.P.A"}
+            else if(i == 4){profilename.innerHTML = "TharvinRaja.S"}
+        }
+
+        function unselect(){
+            profilename.innerHTML = "Friends profiles";
+        }
+
+        function setlink(vinoth, kumar, san, tharvin,c){
+            var colorof = new Array("#00a000","#0500a0","#940f00","#9d9d9d","#00a9cf","#b1008d","#4c4c4c");
+            links.style.display = "flex";
+            console.log(colorof[c]);
+            document.querySelector('#foot footer .parts .part3 .links div').style.boxShadow = '0px 0px 10px 5px ' + colorof[c];
+            document.querySelector('#foot footer .parts .part3 .links div a:nth-child(1)').href = vinoth;
+            document.querySelector('#foot footer .parts .part3 .links div a:nth-child(2)').href = kumar;
+            document.querySelector('#foot footer .parts .part3 .links div a:nth-child(3)').href = san;
+            document.querySelector('#foot footer .parts .part3 .links div a:nth-child(4)').href = tharvin; 
+        }
+        
+        function removelink(){
+            links.style.display = "none";
+}
+    </script>
+</body>
+</html>

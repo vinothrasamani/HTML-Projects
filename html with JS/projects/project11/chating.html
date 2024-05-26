@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&UpArrowDownArrow; Chatings &UpArrowDownArrow;</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="upload.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="shortcut icon" href="assets/logoimg.png" type="image/x-icon">
+</head>
+<body class="chat-body">
+    <div id="chat-top">
+        <span><a href="index.html"><i class="fa-solid fa-arrow-left"></i></a></span>
+        <h3>Chat with Friends</h3>
+        <abbr title="Clear All"><button class="clearall"><i class="fa-solid fa-trash fa-xl"></i></button></abbr>
+    </div>
+    <div id="chats">
+        <p>top...</p>
+        <div class="chat-list">
+            <div class="chat">
+
+            </div>
+        </div>
+        <div class="upload-chat">
+            <input type="text" id="message" placeholder="Enter your Message..">
+            <button id="uploadmsg"><i class="fa-solid fa-paper-plane"></i></button>
+            <i class="err"></i>
+        </div> 
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
+    <script type="text/javascript">
+        const firebaseConfig = {
+            apiKey: "AIzaSyB7_yalPWoyHbBmAxkIRfBtRt0Mbc4FGU0",
+            authDomain: "friends-resume.firebaseapp.com",
+            databaseURL: "https://friends-resume-default-rtdb.firebaseio.com",
+            projectId: "friends-resume",
+            storageBucket: "friends-resume.appspot.com",
+            messagingSenderId: "922315528130",
+            appId: "1:922315528130:web:2b65e1b4c531e842ab685b"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        const auth = firebase.auth();
+        var clean = document.querySelector('#chat-top .clearall');
+        var username;
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                username = user.email;
+                console.log(user.email.split("@")[0]);
+            } else {
+                window.location.href = 'chat.html';
+            }
+        });
+
+        clean.onclick = function(){
+            if(username.split("@")[0] == 'vinoth'){
+                const messagesRef = database.ref('messages');
+                messagesRef.remove().then(() => {
+                    const messagesDiv = document.querySelector('#chats .chat-list .chat');
+                    messagesDiv.innerHTML = '';
+                }).catch(error => {
+                    console.error('Error deleting messages:', error);
+                });
+            }else{
+                alert("You do not have a permission to delete chats!. Please send a chat to delete messages..");
+            }
+        }
+
+        const database = firebase.database();
+        const messagesRef = database.ref('messages');
+        messagesRef.on('child_added', (snapshot) => {
+            const message = snapshot.val();
+            displayMessage(message.text, message.sender);
+        });
+
+        const messageForm = document.getElementById('uploadmsg');
+        messageForm.addEventListener('click', (e) => {
+            e.preventDefault();
+            const input = document.getElementById('message');
+            const text = input.value;
+            if(text != ''){
+                input.placeholder = "Enter your Message..";
+                messagesRef.push({
+                    text: text,
+                    sender: username
+                });
+            }else{
+                input.placeholder = "Enter Somthing..";
+            }
+            input.value = '';
+        });
+
+        function displayMessage(text, sender) {
+            const messagesDiv = document.querySelector('#chats .chat-list .chat');
+            const messageDiv = document.createElement('p');
+            const messagehead = document.createElement('b');
+            if(sender === username){
+                messagehead.textContent = 'you';
+            }else{
+                messagehead.textContent = sender.split("@")[0];
+            }
+            const messagecontnt = document.createElement('span');
+            messagecontnt.textContent = text;
+            messageDiv.classList.add(sender === username ? 'send' : 'receive');
+            messageDiv.appendChild(messagehead);
+            messageDiv.appendChild(document.createElement('br'));
+            messageDiv.appendChild(messagecontnt);
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+    </script>
+</body>
+</html>

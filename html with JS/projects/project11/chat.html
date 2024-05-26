@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&UpArrowDownArrow; Get Access &UpArrowDownArrow;</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="upload.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="shortcut icon" href="assets/logoimg.png" type="image/x-icon">
+</head>
+<body class="chat-body">
+    <div id="login">
+        <div class="auth">
+            <h3>Access with your Name</h3>
+            <input type="text" placeholder="User Name like email format" required id="username">
+            <input type="password" placeholder="Password" required id="password">
+            <button>Start Chat</button>
+        </div>
+    </div>
+    <div id="loader">
+        <div class="circle">
+            <div class="wave"></div>
+        </div>
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
+    <script type="text/javascript">
+        const firebaseConfig = {
+            apiKey: "AIzaSyB7_yalPWoyHbBmAxkIRfBtRt0Mbc4FGU0",
+            authDomain: "friends-resume.firebaseapp.com",
+            databaseURL: "https://friends-resume-default-rtdb.firebaseio.com",
+            projectId: "friends-resume",
+            storageBucket: "friends-resume.appspot.com",
+            messagingSenderId: "922315528130",
+            appId: "1:922315528130:web:2b65e1b4c531e842ab685b"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        var chat_page = document.querySelector('#maincontents');
+        var login_page = document.querySelector('#login');
+        var l = document.querySelector('#loader');
+        var loginto = document.querySelector('#login .auth button');
+        const auth = firebase.auth();
+
+        loginto.addEventListener('click', async(e)=>{
+            e.preventDefault();
+            l.style.display = 'block';
+            const username= document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            try {
+                const methods = await auth.fetchSignInMethodsForEmail(username);
+                if (methods.length > 0) {
+                    await auth.signInWithEmailAndPassword(username, password);
+                    console.log("user already exist..");
+                    l.style.display = 'none';
+                    window.location.href = 'chating.html';
+                } else {
+                    await auth.createUserWithEmailAndPassword(username, password);
+                    console.log("New user Added Successfully..")
+                    l.style.display = 'none';
+                    window.location.href = 'chating.html';
+                }
+            } catch (error) {
+                console.log(`Error: ${error.message}`);
+                l.style.display = 'none';
+                alert(""+error);
+            }
+        });
+
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                console.log(user);
+                l.style.display = 'none';
+                window.location.href = 'chating.html';
+            }
+        });
+    </script>
+</body>
+</html>
