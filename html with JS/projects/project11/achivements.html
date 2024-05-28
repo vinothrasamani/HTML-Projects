@@ -189,30 +189,55 @@
             }
         });
 
-        function upload(e){
-            item = e.target.files[0];
-            pdf_name = item.name;
-            let storageref = firebase.storage().ref("pdf's/" + pdf_name);
-            let uploadtask = storageref.put(item);
-
-            uploadtask.on("state_changed", (snapshot) => {
-                console.log(snapshot);
-                loadof.style.display = "block";
-                count = Math.floor((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-                if (count === 100) {
-                    loadof.style.display = "none";
-                }
-            }, (error) => {
-                console.log("Error: " + error);
-            }, () => {
-                uploadtask.snapshot.ref.getDownloadURL().then((url) => {
-                    console.log("URL: " + url);
-                }).catch((error) => {
-                    console.error("Error getting download URL:", error);
+        function upload(e) {
+            const files = e.target.files;
+            const promises = [];
+        
+            for (let i = 0; i < files.length; i++) {
+                const item = files[i];
+                const pdf_name = item.name;
+                const storageref = firebase.storage().ref("pdfs/" + pdf_name);
+                const uploadtask = storageref.put(item);
+        
+                promises.push(
+                    new Promise((resolve, reject) => {
+                        uploadtask.on(
+                            "state_changed",
+                            (snapshot) => {
+                                // Track upload progress if needed
+                                console.log(snapshot);
+                            },
+                            (error) => {
+                                console.log("Error: " + error);
+                                reject(error);
+                            },
+                            () => {
+                                uploadtask.snapshot.ref
+                                    .getDownloadURL()
+                                    .then((url) => {
+                                        console.log("URL: " + url);
+                                        resolve();
+                                    })
+                                    .catch((error) => {
+                                        console.error("Error getting download URL:", error);
+                                        reject(error);
+                                    });
+                            }
+                        );
+                    })
+                );
+            }
+        
+            Promise.all(promises)
+                .then(() => {
+                    console.log("All files uploaded successfully.");
+                    listpdfs(); 
+                })
+                .catch((error) => {
+                    console.error("Error uploading files:", error);
                 });
-            });
-            listpdfs();
         }
+
     
         function listpdfs(){
             loadof.style.display = "block";
