@@ -195,31 +195,61 @@
             }
         });
         
-        function img_upload(e){
-            img_item = e.target.files[0];
-            img_name = img_item.name;
-            let storageref = firebase.storage().ref("images/" + img_name);
-            let img_uploadtask = storageref.put(img_item);
-
-            img_uploadtask.on("state_changed", (snapshot) => {
-                console.log(snapshot);
-                list_img.style.display = 'none';
-                loadofimg.style.display = "block";
-                count1 = Math.floor((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-                if (count1 === 100) {
-                    loadofimg.style.display = "none";
-                }
-            }, (error) => {
-                console.log("Error: " + error);
-            }, () => {
-                img_uploadtask.snapshot.ref.getDownloadURL().then((url) => {
-                    console.log("URL: " + url);
-                    listimages();
-                }).catch((error) => {
-                    console.error("Error getting download URL:", error);
+        function img_upload(e) {
+            const img_files = e.target.files;
+            const promises = [];
+        
+            for (let i = 0; i < img_files.length; i++) {
+                const img_item = img_files[i];
+                const img_name = img_item.name;
+                const storageref = firebase.storage().ref("images/" + img_name);
+                const img_uploadtask = storageref.put(img_item);
+        
+                promises.push(
+                    new Promise((resolve, reject) => {
+                        img_uploadtask.on(
+                            "state_changed",
+                            (snapshot) => {
+                                // Track upload progress if needed
+                                console.log(snapshot);
+                                list_img.style.display = 'none';
+                                loadofimg.style.display = "block";
+                                count1 = Math.floor((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+                                if (count1 === 100) {
+                                    loadofimg.style.display = "none";
+                                }
+                            },
+                            (error) => {
+                                console.log("Error: " + error);
+                                reject(error);
+                            },
+                            () => {
+                                img_uploadtask.snapshot.ref
+                                    .getDownloadURL()
+                                    .then((url) => {
+                                        console.log("URL: " + url);
+                                        resolve();
+                                    })
+                                    .catch((error) => {
+                                        console.error("Error getting download URL:", error);
+                                        reject(error);
+                                    });
+                            }
+                        );
+                    })
+                );
+            }
+        
+            Promise.all(promises)
+                .then(() => {
+                    console.log("All images uploaded successfully.");
+                    listimages(); // Call your function to list the uploaded images
+                })
+                .catch((error) => {
+                    console.error("Error uploading images:", error);
                 });
-            });
         }
+
 
         function listimages(){
             loadofimg.style.display = "block";
