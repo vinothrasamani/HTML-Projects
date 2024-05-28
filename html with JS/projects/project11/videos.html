@@ -181,32 +181,61 @@
             }
         });
         
-        function video_upload(e){
-            video_item = e.target.files[0];
-            img_name = video_item.name;
-            let storageref = firebase.storage().ref("videos/" + video_item);
-            let video_uploadtask = storageref.put(video_item);
-
-            video_uploadtask.on("state_changed", (snapshot) => {
-                console.log(snapshot);
-                loadofvideo.style.display = "block";
-                count2 = Math.floor((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-                if (count2 === 100) {
-                    loadofvideo.style.display = "none";
-                }
-            }, (error) => {
-                console.log("Error: " + error);
-                loadofvideo.style.display = "none";
-            }, () => {
-                video_uploadtask.snapshot.ref.getDownloadURL().then((url) => {
-                    console.log("URL: " + url);
-                    listvideos();
-                }).catch((error) => {
-                    console.error("Error getting download URL:", error);
+        function video_upload(e) {
+            const video_files = e.target.files;
+            const promises = [];
+        
+            for (let i = 0; i < video_files.length; i++) {
+                const video_item = video_files[i];
+                const video_name = video_item.name;
+                const storageref = firebase.storage().ref("videos/" + video_name);
+                const video_uploadtask = storageref.put(video_item);
+        
+                promises.push(
+                    new Promise((resolve, reject) => {
+                        video_uploadtask.on(
+                            "state_changed",
+                            (snapshot) => {
+                                // Track upload progress if needed
+                                console.log(snapshot);
+                                loadofvideo.style.display = "block";
+                                count2 = Math.floor((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+                                if (count2 === 100) {
+                                    loadofvideo.style.display = "none";
+                                }
+                            },
+                            (error) => {
+                                console.log("Error: " + error);
+                                loadofvideo.style.display = "none";
+                                reject(error);
+                            },
+                            () => {
+                                video_uploadtask.snapshot.ref
+                                    .getDownloadURL()
+                                    .then((url) => {
+                                        console.log("URL: " + url);
+                                        resolve();
+                                    })
+                                    .catch((error) => {
+                                        console.error("Error getting download URL:", error);
+                                        reject(error);
+                                    });
+                            }
+                        );
+                    })
+                );
+            }
+        
+            Promise.all(promises)
+                .then(() => {
+                    console.log("All videos uploaded successfully.");
+                    listvideos(); // Call your function to list the uploaded videos
+                })
+                .catch((error) => {
+                    console.error("Error uploading videos:", error);
                 });
-            });
         }
-
+        
         function listvideos(){
             loadofvideo.style.display = "block";
             var storageRef = firebase.storage().ref("videos/"); // Adjust the directory path as needed
