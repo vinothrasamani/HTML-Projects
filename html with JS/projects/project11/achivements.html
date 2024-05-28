@@ -196,7 +196,7 @@
             for (let i = 0; i < files.length; i++) {
                 const item = files[i];
                 const pdf_name = item.name;
-                const storageref = firebase.storage().ref("pdfs/" + pdf_name);
+                const storageref = firebase.storage().ref("pdf's/" + pdf_name);
                 const uploadtask = storageref.put(item);
         
                 promises.push(
