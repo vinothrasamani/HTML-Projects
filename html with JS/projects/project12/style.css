@@ -1,0 +1,163 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: rgb(54, 54, 54);
+}
+#top{
+    background: rgb(0, 21, 255);
+    padding: 0 10px;
+    color: rgb(255, 157, 0);
+}
+.wishes{
+    width: 100%;
+    height: 90vh;
+}
+.wishes .image{
+    width:40%;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 93%;
+    margin: 20px;
+}
+.wishes .image button{
+    padding: 10px 20px;
+    margin: 15px 0;
+    font-size: 16px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    background: rgba(76, 76, 76, 0.431);
+}
+.wishes .image img{
+    max-width: 100%;
+    border-radius: 2px;
+    max-height: 90%;
+    box-shadow: 0 0 10px 1px rgb(255, 0, 221);
+}@keyframes pop{
+    0%{
+        filter: brightness(50%);
+    }
+    50%{
+        filter: brightness(100%);
+    }
+    100%{
+        filter: brightness(50%);
+    }
+}
+@keyframes anim{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+.wishes .wish{
+    max-width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.wishes .wish h1{
+    color: rgb(47, 255, 0);
+    font-size: 60px;
+    animation: anim 20s infinite linear;
+    text-align: center;
+    margin: 2px;
+}
+.wishes .wish h3{
+    margin: 5%;
+    text-align: center;
+    font-size: 25px;
+    color: rgb(199, 199, 199);
+} 
+.comments{
+    margin: 10px;
+    flex-direction: column;
+}
+.comments .form{
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px 1px rgb(0, 255, 221);
+    border-radius: 5px;
+}
+.comments .form, .comments{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.comments .form input, .comments .form button{
+    font-size: 14px;
+    padding: 6px 15px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+}
+.comments .form button{
+    margin: 0 10px;
+    cursor: pointer;
+    animation: anim 10s infinite linear;
+    background: linear-gradient(90deg, rgb(184, 201, 0), rgb(222, 96, 0));
+
+}
+.wish-list{
+    margin: 5px;
+    background: rgb(79, 79, 79);
+    height: 100%;
+}
+.wish-list .list{
+    margin: 20px;
+}
+.wish-list .list .list-item{
+    line-height: .5;
+}
+.wish-list .list h3{
+    color: rgb(122, 113, 241);
+}
+.wish-list .list p{
+    color: rgb(195, 195, 195);
+    text-indent: 10px;
+    padding-bottom: 10px;
+    border-bottom: .5px solid rgb(102, 102, 102);
+}
+.wish-list h1{
+    color: rgb(245, 172, 37);
+    padding: 15px;
+    background: rgba(95, 95, 95, 0.557);
+}
+@media(max-width: 800px){
+    .wishes .wish{
+        min-width: 100%;
+        height: auto;
+        margin: 10px 0;
+    }
+    .wishes .image{
+        width: 100%;
+        height: 90%;
+        margin: 10px 0;
+        margin-top: 20px;
+    }
+    .wishes .wish h1{
+        font-size: 45px;
+    }
+    .wishes{
+        height: 100%;
+    }
+}
+@media(max-width: 430px){
+    .wishes .image{
+        width: 90%;
+        height: auto;
+        margin: 5%;
+    }
+    .wishes .wish h3{
+        font-size: 20px;
+    }
+    .wishes .wish h1{
+        font-size: 40px;
+    }
+}

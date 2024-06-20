@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+</head>
+<body>
+    <div id="top">
+        <marquee behavior="scroll" direction="left"><h2>HAPPY BIRTHDAY MY DEAR FRIEND 🥳🥳!!</h2></marquee>
+    </div>
+    <div class="wishes">
+        <div class="image">
+            <img src="assets/img1.jpg" alt="Images view">
+            <button onclick="updateLikes();anime();">Like(s) <span>0</span>❤️</button>
+        </div>
+        <div class="wish">
+            <h1>Happy Birthday, Harivignesh!</h1>
+            <h3>Wishing you a wonderful day filled with special moments and joy. 
+                May you have an excellent day and enjoy all the celebrations. Once again, happy birthday!"</h3>
+        </div>
+        <audio src="assets/song1.mp3" autoplay></audio>
+    </div>
+    <hr style="margin: 2px 20px;">
+    <div class="comments">
+        <div class="form">
+            <input type="text" id="wish" placeholder="Share your wishes here...">
+            <button onclick="sendwish();">share</button>
+        </div>
+    </div>
+    <div class="wish-list">
+        <h1>List of Wishes</h1>
+        <div class="list">
+            <!-- <div class="list-item">
+                <h3>vinoth</h3>
+                <p>happy birthday!!</p>
+            </div> -->
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script type="text/javascript">
+        function anime(){
+            let limit = setInterval(() =>{
+                confetti({
+                    particleCount: 250,
+                    spread: 100,
+                    origin: { y: .5 }
+                });
+            }, 100); 
+            setTimeout(function(){
+                clearInterval(limit);
+            }, 400);                 
+        };       
+        var i = 1;
+        var imagesrc = document.querySelector('.wishes .image img');
+        setInterval(()=>{
+            imagesrc.src = `assets/img`+i+`.jpg`;
+            i++;
+            if(i>=4){
+                i = 1;
+            }
+        }, 2500);
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
+    <script type="text/javascript">
+        const firebaseConfig = {
+            apiKey: "AIzaSyCy22qSac9JuvX4Bxtg_ZhA1gSjoc6p0qw",
+            authDomain: "birthday-wishes-2024.firebaseapp.com",
+            projectId: "birthday-wishes-2024",
+            storageBucket: "birthday-wishes-2024.appspot.com",
+            messagingSenderId: "509155099514",
+            appId: "1:509155099514:web:1baec23d022530bbbd0cc3"
+        };
+        firebase.initializeApp(firebaseConfig);
+        var data, name;
+        var db = firebase.database();
+        var dataref = db.ref('wishes');
+        dataref.on('child_added', (snap) =>{
+            const item = snap.val();
+            listview(item.Sender, item.Wish);
+        })
+
+        function sendwish(){
+            data = document.getElementById('wish');
+            if(data.value != ''){
+                name = prompt("Enter your Name!!");
+                console.log(name);
+                if(name != ''){
+                    updateof(data.value, name);
+                    data.value = '';
+                }
+                else{
+                    alert("Please enter your name to identify your wishes from the list..");
+                    data.value = '';
+                    data.placeholder = "Share your wishes here...";
+                }
+            }else{
+                data.placeholder = "Please enter something..";
+            }
+            console.log(data.value);
+        }
+
+        function updateof(wish, id){
+            dataref.push({
+                Sender : id,
+                Wish : wish,
+            });
+            alert("Your wish is added Successfully..");
+        }
+
+        function listview(sender, wish){
+            var listDiv = document.querySelector('.wish-list .list');
+            var li = document.createElement('div');
+            li.classList.add('list-item');
+            var who = document.createElement('h3');
+            var what = document.createElement('p');
+            who.textContent = sender;
+            what.textContent = wish;
+            li.appendChild(who);
+            li.appendChild(what);
+            listDiv.appendChild(li);
+        }
+
+        function updateLikes() {
+            var dbRef = db.ref('likes');
+            dbRef.once('value').then((snapshot) => {
+                if (snapshot.exists()) {
+                var oldData = snapshot.val();
+                var newData = { count: oldData.count + 1 };
+
+                dbRef.update(newData)
+                    .then(() => {
+                    console.log('Like added successfully!');
+                    document.querySelector('.wishes .image button span').innerText = newData.count;
+                    })
+                    .catch((error) => {
+                    console.error('Error updating data: ', error);
+                    });
+                } else {
+                dbRef.set({ count: 1 })
+                    .then(() => {
+                    console.log('Like initialized successfully!');
+                    document.querySelector('.wishes .image button span').innerText = 1;
+                    })
+                    .catch((error) => {
+                    console.error('Error initializing data: ', error);
+                    });
+                }
+            }).catch((error) => {
+                console.error('Error reading data: ', error);
+            });
+            }
+
+        function displayInitialValue() {
+            var dbRef = db.ref('likes');
+            dbRef.once('value').then((snapshot) => {
+                if (snapshot.exists()) {
+                var data = snapshot.val();
+                document.querySelector('.wishes .image button span').innerText = data.count;
+                }
+            }).catch((error) => {
+                console.error('Error reading data: ', error);
+            });
+            }
+
+        window.onload = displayInitialValue;
+    </script>
+</body>
+</html>
