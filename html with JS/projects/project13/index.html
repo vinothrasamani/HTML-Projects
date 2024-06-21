@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="container">
+        <div id="top">
+            <h2>Tic-Tac-Toe Game</h2>
+            <i>Start the game!!</i>
+        </div>
+        <table border="1">
+            <tr><td id="id1" onclick="mark(1)"></td><td id="id2" onclick="mark(2)"></td><td id="id3" onclick="mark(3)"></td></tr>
+            <tr><td id="id4" onclick="mark(4)"></td><td id="id5" onclick="mark(5)"></td><td id="id6" onclick="mark(6)"></td></tr>
+            <tr><td id="id7" onclick="mark(7)"></td><td id="id8" onclick="mark(8)"></td><td id="id9" onclick="mark(9)"></td></tr>
+        </table>
+    </div>
+    <div class="btn">
+        <button>Restart</button>
+    </div>
+    <script type="text/javascript">
+        var i = 0, win = false;
+        let arr = Array.of();
+        let check = Array.of();
+        function mark(Id){
+            var permit = true;
+            for(let j = 0; j < 9; j++){
+                if(arr[j] == Id){
+                    permit = false;
+                    break;
+                }
+            }
+            if(permit === true && win === false){
+                if(i % 2 == 0){
+                    document.getElementById(`id` + Id).textContent = 'x';
+                    arr[i] = Id;
+                    check[Id] = 'x';
+                    i++;
+                    // console.log(arr);
+                }else{                
+                    document.getElementById(`id` + Id).textContent = 'o';
+                    arr[i] = Id;
+                    check[Id] = 'o';
+                    i++;
+                    // console.log(arr);
+                } 
+            }        
+            if((check[1]+check[2]+check[3] == "xxx" || check[4]+check[5]+check[6] == "xxx" ||check[7]+check[8]+check[9] == "xxx"
+            || check[1]+check[4]+check[7] == "xxx" || check[2]+check[5]+check[8] == "xxx" || check[3]+check[6]+check[9] == "xxx"
+            || check[1]+check[5]+check[9] == "xxx" || check[3]+check[5]+check[7] == "xxx")){
+                document.querySelector('#top i').textContent = "\"x\" won the match!!";
+                win = true;
+            }
+            else if((check[1]+check[2]+check[3] == "ooo" || check[4]+check[5]+check[6] == "ooo" ||check[7]+check[8]+check[9] == "ooo"
+            || check[1]+check[4]+check[7] == "ooo" || check[2]+check[5]+check[8] == "ooo" || check[3]+check[6]+check[9] == "ooo"
+            || check[1]+check[5]+check[9] == "ooo" || check[3]+check[5]+check[7] == "ooo")){
+                document.querySelector('#top i').textContent = "\"o\" won the match!!";
+                win = true;
+            }else{
+                if(arr.length == 9){
+                    document.querySelector('#top i').textContent = "It's a Tie..";
+                }
+            }
+        }
+
+        document.querySelector('.btn button').onclick = function(){
+            i = 0;
+            arr = [];
+            win = false;
+            check = [];
+            document.querySelector('#top i').textContent = "Start the game!!";
+            for(let k = 1; k <= 9; k++){
+                document.getElementById(`id` + k).textContent = '';
+            }
+        }
+    </script>
+</body>
+</html>

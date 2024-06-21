@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: rgb(46, 46, 46);
+    color: #ffffff;
+    width: 100%;
+    height: 100vh;
+}
+body, #container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#top{
+    margin-bottom: 30px;
+    text-align: center;
+}
+#container{
+    background: #434343;
+    width: 500px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px .5px rgb(158, 158, 158);
+    height: 500px;
+}
+#container table{
+    border-collapse: collapse;
+    border: none;
+    border-color: rgb(98, 119, 119);
+}
+#container table tr td{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#container table tr td:hover{
+    background-color: rgba(148, 148, 148, 0.276);
+}
+#container table tr:first-child{
+    border-top: transparent;
+}
+#container table tr:last-child{
+    border-bottom: transparent;
+}
+#container table tr td:first-child{
+    border-left: transparent;
+}
+#container table tr td:last-child{
+    border-right: transparent;
+}
+.btn button{
+    margin: 15px;
+    padding: 5px 25px;
+    border-radius: 20px;
+    border: 1px solid green;
+    cursor: pointer;
+    font-size: 16px;
+    background: #022446c7;
+    outline: none;
+    color: rgb(227, 223, 0);
+}
+@media(max-width:510px){
+    #container{
+        width: 95%;
+        height: 60vh;
+    }
+    #container table tr td{
+        width: 80px;
+        height: 80px;
+    }
+}
