@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Chat &UpArrow;&DownArrow;</title>
+    <link rel="shortcut icon" href="asset/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="pop">
+        <h4>My chat</h4>
+        <p>Alerts..</p>
+    </div>
+    <div class="two">
+        <div class="top">
+            <div class="img"><img src="asset/logo.png" alt=""></div>
+            <div class="appname"><h2>My chat!</h2></div>
+            <div class="deletebtn"><button class="fa-solid fa-trash"></button></div>
+        </div>
+        <div class="inputbody">
+            <button class="files"><label for="attach"><i class="fa-solid fa-file-circle-plus"></i></label></button>
+            <input type="file" id="attach" hidden multiple>
+            <input type="text" placeholder="Enter your message here.." id="msg" autofocus>
+            <button class="send fa-solid fa-paper-plane"></button>
+            <button class="voice fa-solid fa-microphone"></button>
+            <button class="voice-close fa-solid fa-microphone-slash"></button>
+        </div> 
+    </div> 
+    <div class="messagebody">
+        <div class="inner">
+            <div class="list">
+                <!-- List Items -->
+            </div>
+            <div class="end">
+                <i>--------------------This is the End!--------------------</i>
+            </div>
+        </div>
+    </div>  
+    
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
